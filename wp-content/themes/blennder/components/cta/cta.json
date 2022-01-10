@@ -1,0 +1,23 @@
+{
+	"version": 1,
+	"default_fields": {
+		"component_header_style": "display-1",
+		"component_header_tag": "h1",
+		"cta_size": "lg",
+		"cta_text_positioning": "center left",
+		"cta_text_has_overlay": false,
+		"cta_template": "text",
+		"background_image_attachment": "fixed",
+		"background_enable_overlay": true,
+		"cta_form_header_option": "form",
+		"cta_form_show_gf_title": true,
+		"cta_form_show_gf_description": true,
+		"cta_form_ajax": true,
+		"cta_form_tabindex": 1,
+		"cta_form_display_inactive": false
+	},
+	"classes": {
+		"background_type": "default",
+		"cta_size": "lg"
+	}
+}

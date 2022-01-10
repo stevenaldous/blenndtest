@@ -1,0 +1,9 @@
+{
+	"version": 1,
+	"default_fields": {
+		"counters_cards_per_view_sm": 1,
+		"counters_cards_per_view_md": 2,
+		"counters_cards_per_view_lg": 3,
+		"counters_cards_per_view_xl": 4
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"version": 1,
+	"default_fields": {
+		"component_header_style": "display-2",
+		"text_media_media_type": "image",
+		"text_media_image_position": "center center",
+		"text_media_image_size": "cover",
+		"text_media_media_position": "right",
+		"text_media_media_width": 6,
+		"text_media_video_playback_style": "popup",
+		"container": "container-fluid"
+	},
+	"classes": {
+		"text_media_media_position": "left"
+	},
+	"container": "h-100",
+	"container-fluid": "h-100"
+}

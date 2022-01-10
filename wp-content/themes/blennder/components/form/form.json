@@ -1,0 +1,11 @@
+{
+	"version": 1,
+	"default_fields": {
+		"form_header_option": "form",
+		"form_show_gf_title": true,
+		"form_show_gf_description": true,
+		"form_ajax": true,
+		"form_tabindex": 1,
+		"form_display_inactive": false
+	}
+}

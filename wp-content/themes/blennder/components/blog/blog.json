@@ -1,0 +1,22 @@
+{
+	"version": 1,
+	"default_fields": {
+		"blog_posts_source": "wp_query",
+		"blog_posts_per_page": -1,
+		"blog_layout": "feed",
+		"blog_layout_cards": "grid",
+		"blog_cards_carousel_layout": "title-top",
+		"blog_show_featured_image": true,
+		"blog_cards_image_position": "top",
+		"blog_carousel_show_navigation": true,
+		"blog_carousel_show_pagination": true,
+		"blog_carousel_loop": true,
+		"blog_carousel_lazy_load": false,
+		"blog_cards_swiper_controls_layout": "pagination-navigation"
+	},
+	"classes": {
+		"blog_cards_image_position": "cover",
+		"blog_related_posts": "related-posts-false"
+	},
+	"container_fluid": "pr-0 padding-left-dynamic"
+}

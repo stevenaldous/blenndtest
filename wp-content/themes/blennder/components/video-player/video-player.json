@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"default_fields": {
+		"video_player_layout": "single",
+		"video_player_carousel_show_navigation": true,
+		"video_player_carousel_show_pagination": true,
+		"video_player_carousel_autoplay": false,
+		"video_player_carousel_autoplay_delay": 3000,
+		"video_player_carousel_loop": false,
+		"video_player_carousel_speed": 750,
+		"video_player_carousel_lazy_load": true,
+		"video_player_carousel_centered_slides": true
+	}
+}

@@ -1,0 +1,455 @@
+/** Gravity Forms */
+.gform_wrapper {
+	ul {
+		@extend .list-unstyled;
+	}
+
+	li {
+		@extend .form-group;
+		list-style-type: none;
+	}
+}
+
+// Error & Validation
+.gfield_required {
+	color: $form-feedback-invalid-color;
+}
+
+.gfield_error {
+	input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']):not([type='range']),
+	select,
+	textarea {
+		border-color: $form-feedback-invalid-color !important;
+
+		&:focus {
+			box-shadow: 0 0 0 $input-focus-width rgba( $danger, 0.25 );
+		}
+	}
+
+	.gfield_radio label,
+	.gfield_checkbox label {
+		color: $form-feedback-invalid-color;
+	}
+}
+
+.validation_error {
+	@extend .alert;
+	@extend .alert-danger;
+}
+
+.validation_message {
+	display: none;
+
+	.gfield_error & {
+		display: inline-block;
+		color: $form-feedback-invalid-color;
+		font-style: italic;
+		font-size: $font-size-sm;
+	}
+}
+
+// Label
+.gfield_label,
+.form-label {
+	font-weight: $font-weight-bold;
+}
+
+.ginput_container_textarea > textarea {
+	&.small {
+		height: rem( 90 );
+	}
+
+	&.medium {
+		height: rem( 130 );
+	}
+
+	&.large {
+		height: rem( 190 );
+	}
+}
+
+//Description
+.gform_description {
+	@extend .form-text;
+	font-size: $font-size-sm;
+	font-style: italic;
+}
+
+// Visibility
+.gfield.gform_hidden,
+.gfield_visibility_hidden,
+.hidden_label label,
+.hidden_sub_label {
+	@include sr-only;
+}
+
+// Section
+.gfield.gsection {
+	clear: both;
+	margin-top: $spacer;
+
+	.gsection_title {
+		font-size: $font-size-base * 1.8;
+	}
+}
+
+// HTML Field
+.gfield_html {
+	clear: both;
+	@include clearfix;
+}
+
+// Selects
+.gfield_select,
+.ginput_container select {
+	@extend .custom-select;
+}
+
+//Radio & Checkbox
+.gfield_checkbox,
+.gfield_radio {
+	.gchoice {
+		@extend .form-check;
+	}
+
+	input[type='radio'],
+	input[type='checkbox'] {
+		@extend .form-check-input;
+	}
+
+	label {
+		@extend .form-check-label;
+	}
+}
+
+.gfield_radio {
+	input[type='radio'] + input[type='text'] {
+		display: inline-block !important;
+		width: auto !important;
+	}
+}
+
+// File Upload
+.ginput_container_fileupload {
+	height: $input-height;
+	display: flex;
+	align-items: center;
+}
+
+// Inline list
+.gf_list_inline {
+	.gchoice {
+		margin-right: 1.25rem;
+	}
+}
+
+// List Height Classes
+$heights : (25,50,75,100,125,150);
+
+@each $i in $heights {
+	.gf_list_height_#{$i} li {
+		height: $i + px;
+	}
+}
+
+.gfield_date_month input,
+.gfield_date_day input,
+.gfield_date_year input,
+input.datepicker_no_icon {
+	background: $custom-date-indicator-color $custom-date-indicator;
+	background-image: url( '#{$imgpath}/calendar.svg' );
+	background-size: $font-size-base;
+	background-repeat: no-repeat;
+	background-position: calc( 100% - 6px ) center;
+	padding-right: $custom-date-indicator-padding !important;
+}
+
+.gfield_date_month,
+.gfield_date_day,
+.gfield_date_year,
+.gfield_date_dropdown_month,
+.gfield_date_dropdown_day,
+.gfield_date_dropdown_year {
+	display: inline-block;
+	margin-right: rem( 5 );
+}
+
+.gform_wrapper .gform_body .gfield_date_day input[type='number'],
+.gform_wrapper .gform_body .gfield_date_month input[type='number'] {
+	width: rem( 85 ) !important;
+}
+
+.gfield_date_year input {
+	width: rem( 100 ) !important;
+}
+
+.ginput_container_time {
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.gfield_time_hour input[type='number'],
+	&.gfield_time_minute input[type='number'] {
+		display: inline-block !important;
+		width: 85% !important;
+	}
+}
+
+.gf_hide_ampm {
+	.gfield_time_ampm {
+		display: none;
+	}
+}
+
+.gfield_time_ampm {
+	width: auto;
+}
+
+.gf_hide_charleft {
+	.charleft {
+		display: none;
+	}
+}
+
+.gf_scroll_text {
+	padding: rem( 15 );
+	border: 1px solid $input-border-color;
+	height: rem( 180 );
+	overflow: auto;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+// Gfield List
+
+.gfield_list {
+	margin: 0;
+
+	.gfield_list_cell {
+		padding-right: $form-grid-gutter-width;
+		padding-bottom: rem( 5 );
+	}
+}
+
+.clear-multi {
+	@include clearfix;
+}
+
+@include media-breakpoint-up(md) {
+	.top_label {
+		.ginput_complex {
+			display: flex;
+			flex-wrap: wrap;
+
+			> span {
+				margin-right: $form-grid-gutter-width;
+				flex: 1 0 auto;
+
+				input,
+				select,
+				textarea {
+					margin-bottom: 0;
+				}
+
+				&:last-child,
+				&.ginput_right {
+					margin-right: 0;
+				}
+
+				&.ginput_full {
+					width: 100%;
+					flex-basis: 100%;
+					margin-right: 0;
+					margin-bottom: $spacer;
+				}
+
+				&.ginput_left,
+				&.ginput_right {
+					width: calc( 50% - (#{$form-grid-gutter-width} / 2) );
+					flex-basis: calc( 50% - (#{$form-grid-gutter-width} / 2) );
+					margin-bottom: $spacer;
+				}
+
+				&.name_prefix,
+				&.name_suffix {
+					width: rem( 30 );
+					flex-basis: rem( 30 );
+				}
+
+				&.name_first,
+				&.name_last {
+					width: 20%;
+					flex-basis: 20%;
+				}
+
+				&.name_middle {
+					width: rem( 100 );
+					flex-basis: rem( 100 );
+				}
+
+				&.address_zip,
+				&.address_country {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+//Progress Bar
+.gf_progressbar_title {
+	font-size: $font-size-base * 1.25;
+	text-align: center;
+}
+
+.gf_progressbar_wrapper {
+	margin: $spacer * 3 0;
+}
+
+.gf_progressbar {
+	@extend .progress;
+}
+
+.gf_progressbar_percentage {
+	@extend .progress-bar;
+
+	&.percentbar_blue {
+		background-color: var( --primary );
+	}
+
+	&.percentbar_gray {
+		background-color: $gray-700;
+	}
+
+	&.percentbar_green {
+		background-color: $success;
+	}
+
+	&.percentbar_orange {
+		background-color: var( --secondary );
+	}
+
+	&.percentbar_red {
+		background-color: $danger;
+	}
+
+	&.percentbar_custom {
+		@extend .progress-bar-striped;
+	}
+}
+
+// Page Steps
+.gf_step {
+	display: inline-block;
+	color: $gray-200;
+	margin-right: $form-grid-gutter-width;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.gf_step_active {
+	color: var( --primary );
+}
+
+.gf_step_number {
+	font-weight: bold;
+	font-size: rem( 26 );
+}
+
+
+// UI Datepicker
+.gfield > .ginput_container_date {
+	position: relative;
+
+	.ui-datepicker-trigger {
+		position: absolute;
+		right: rem( 10 );
+		top: calc( #{$input-height} / 2 );
+		transform: translateY( -50% );
+	}
+}
+
+.ui-datepicker {
+	background: #fcfcfc;
+	border: 1px solid $gray-200;
+	min-width: 200px;
+	text-align: center;
+	box-shadow: $box-shadow-lg;
+}
+
+.ui-datepicker-next,
+.ui-datepicker-prev {
+	width: 20%;
+	font-weight: $font-weight-bold;
+	padding: 0 rem( 5 );
+	cursor: pointer;
+
+	&.ui-datepicker-hover {
+		color: var( --white ) !important;
+	}
+}
+
+.ui-datepicker-prev {
+	float: left;
+}
+
+.ui-datepicker-next {
+	float: right;
+}
+
+.ui-datepicker-title {
+	width: 60%;
+	float: left;
+
+	select {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.ui-datepicker-header {
+	@include clearfix;
+	border-bottom: 1px solid $gray-200;
+	padding: rem( 3 ) 0;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-calendar {
+	width: 100%;
+}
+
+.ui-datepicker-calendar {
+	tbody tr {
+		border-top: 1px solid $gray-200;
+
+		td {
+			border-right: 1px solid $gray-200;
+			padding: 0;
+		}
+	}
+}
+
+.ui-state-default {
+	display: block;
+	text-align: center;
+	color: var( --primary );
+	font-weight: $font-weight-bold;
+}
+
+.ui-state-hover {
+	color: var( --white ) !important;
+	background-color: var( --primary );
+}
+
+// honeypot field, hide it from human beings
+.gform_validation_container {
+	@include sr-only;
+}

@@ -1,0 +1,135 @@
+@each $color in map-keys( $theme-colors ) {
+	.bg--#{$color} {
+		background-color: var( --#{$color} );
+	}
+	.text--#{$color} {
+		color: var( --#{$color} );
+	}
+}
+
+:root {
+	@each $name, $value in $grays {
+		--gray-#{$name}: #{$value};
+	}
+}
+
+@each $name, $value in $grays {
+	.bg--gray-#{$name} {
+		background-color: var( --gray-#{$name} );
+	}
+}
+
+// Useful to negate container padding on lower breakpoints
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-down($breakpoint) {
+		$infix: breakpoint-infix( $breakpoint, $grid-breakpoints );
+
+		.px {
+			&-#{$breakpoint}-down-0 {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+
+		.pr {
+			&-#{$breakpoint}-down-0 {
+				padding-right: 0;
+			}
+		}
+
+		.pl {
+			&-#{$breakpoint}-down-0 {
+				padding-left: 0;
+			}
+		}
+
+		.py {
+			&-#{$breakpoint}-down-0 {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+
+		.pt {
+			&-#{$breakpoint}-down-0 {
+				padding-top: 0;
+			}
+		}
+
+		.pb {
+			&-#{$breakpoint}-down-0 {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+// Utility to add padding to a full width element to line up content with the .container
+@each $breakpoint in map-keys( $container-max-widths ) {
+	@include media-breakpoint-up( $breakpoint ) {
+		$calc : calc( ( 100vw - #{ map-get( $container-max-widths, $breakpoint ) } ) / 2 + #{ $grid-gutter-width * 0.25 } );
+		@if 'xs' != $breakpoint {
+			.padding-left-dynamic {
+				padding-left: $calc;
+			}
+
+			.padding-right-dynamic {
+				padding-right: $calc;
+			}
+		}
+	}
+}
+
+.card-deck {
+	.card {
+		height: auto;
+		margin-bottom: $card-deck-margin * 1.5;
+
+		@include media-breakpoint-up(sm) {
+			@include card-deck-column-count(1);
+		}
+
+		@include media-breakpoint-up(md) {
+			@include card-deck-column-count(2);
+			margin-bottom: $card-deck-margin * 2.5;
+		}
+
+		@include media-breakpoint-up(lg) {
+			@include card-deck-column-count(3);
+		}
+
+	}
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix( $breakpoint, $grid-breakpoints );
+		@for $i from 1 through ( $grid-columns * 0.5 ) {
+			.card-deck#{$infix}-#{$i} .card {
+				@include card-deck-column-count($i);
+			}
+		}
+	}
+}
+
+a.anchor {
+	display: block;
+	visibility: hidden;
+	position: absolute;
+	top: calc( -#{$header-height-mobile} - #{$preheader-height-mobile} );
+	@include media-breakpoint-up(md) {
+		top: calc( -#{$header-height} - #{$preheader-height} );
+	}
+
+	.admin-bar & {
+		top: calc( -43px - #{$header-height-mobile} - #{$preheader-height-mobile} );
+		@include media-breakpoint-up(md) {
+			top: calc( -32px - #{$header-height} - #{$preheader-height} );
+		}
+	}
+}
+
+
+.z-1 {
+	z-index: 1;
+}

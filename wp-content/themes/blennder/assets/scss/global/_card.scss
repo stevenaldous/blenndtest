@@ -1,0 +1,15 @@
+.card {
+	&-header {
+		background: transparent;
+	}
+
+	&-deck {
+		max-width: 100%;
+	}
+
+	.card-body p {
+		.component & {
+			color: unset;
+		}
+	}
+}

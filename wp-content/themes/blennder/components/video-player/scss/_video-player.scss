@@ -1,0 +1,33 @@
+/************
+ *
+ * Video Player Styles
+ *
+ ***********/
+
+.video-player {
+	$this: &;
+
+	&__slide {
+		height: auto;
+		transition: opacity 0.3s ease-in-out;
+		padding: 0 rem( 15 );
+
+		&.swiper-slide-prev,
+		&.swiper-slide-partial {
+			opacity: 0.5;
+		}
+	}
+
+	&__video-media {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__content {
+		margin-top: map-get( $spacers, 4 );
+		#{$this}--single &,
+		#{$this}--centered & {
+			text-align: center;
+		}
+	}
+}

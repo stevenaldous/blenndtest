@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"default_fields": {
+		"team_layout": "grid",
+		"team_heading_layout_columns": false,
+		"team_posts_source": "wp_query",
+		"team_show_bio_type": "modal",
+		"team_show_images": true,
+		"team_image_position": "top",
+		"team_carousel_show_navigation": true,
+		"team_carousel_show_pagination": true,
+		"team_carousel_autoplay": false,
+		"team_carousel_autoplay_delay": 3000,
+		"team_carousel_loop": false,
+		"team_carousel_speed": 300,
+		"team_sort_order": "DESC",
+		"team_sort_orderby": null
+	},
+	"container_fluid": "pr-0 padding-left-dynamic"
+}

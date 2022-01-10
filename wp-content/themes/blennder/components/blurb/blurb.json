@@ -1,0 +1,10 @@
+{
+	"version": 1,
+	"default_fields": {
+		"heading_layout_columns": false,
+		"heading_alignment": "left",
+		"blurb_content_layout_centered":  true,
+		"blurb_box_shadow":  true,
+		"blurb_icon_position": "top"
+	}
+}

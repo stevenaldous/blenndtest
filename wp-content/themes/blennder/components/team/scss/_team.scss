@@ -1,0 +1,177 @@
+/************
+ *
+ * Team Styles
+ *
+ ***********/
+
+.team {
+	$this: &;
+
+	.card {
+		.card-subtitle {
+			order: unset;
+		}
+
+
+		&--img-top {
+			box-shadow: none;
+
+			.card-subtitle {
+				color: var( --black );
+			}
+
+			.card-body {
+				padding: ( $card-spacer-y * 2 ) 0;
+			}
+		}
+
+		&--img-cover {
+			background-position: center top;
+
+			.card-img-overlay {
+				padding: $card-spacer-x * 0.8;
+				background-image: linear-gradient( to bottom, transparent 60%, rgba( $black, 0.85 ) );
+			}
+		}
+	}
+
+	&__social {
+		color: $gray-800;
+
+		&:hover {
+			color: var( --black );
+		}
+	}
+
+	&__slider {
+		margin: 0 rem( -15 );
+		@include media-breakpoint-up(md) {
+			margin: 0 (-$grid-gutter-width * 0.5);
+		}
+
+		&--full-width {
+			#{$this}__slider {
+				margin-right: 0;
+			}
+		}
+
+		.card {
+			height: 100%;
+		}
+	}
+
+	&__slide {
+		padding: rem( 15 );
+		height: auto;
+		transition: opacity 0.3s ease-in-out;
+		@include media-breakpoint-up(md) {
+			padding: $grid-gutter-width * 0.5;
+		}
+
+		&.swiper-slide-partial {
+			opacity: 0.5;
+		}
+	}
+
+	&--list {
+		.card {
+			box-shadow: none;
+
+			.card-img,
+			.card-img-top {
+				@include border-bottom-radius($card-inner-border-radius);
+			}
+
+			.card-subtitle {
+				color: var( --black );
+			}
+
+			@include media-breakpoint-down(sm) {
+				.card-body {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+
+			@include media-breakpoint-up(md) {
+				flex-direction: row;
+				align-items: center;
+				width: 100%;
+				flex-grow: 1;
+				flex-basis: calc( 100% - #{$grid-gutter-width} );
+
+				.card-img,
+				.card-img-top {
+					flex: 0 1 44%;
+					width: 44%;
+				}
+
+				.card-body {
+					flex: 1;
+					padding-top: 0;
+					padding-bottom: 0;
+					@include media-breakpoint-up(lg) {
+						padding-left: 3rem;
+					}
+					@include media-breakpoint-up(xl) {
+						padding-left: 5rem;
+						padding-right: 3rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__modal {
+		.modal-meta {
+			padding: 0 $modal-header-padding-x;
+			@include media-breakpoint-down(sm) {
+				padding-left: $spacer;
+				padding-right: $spacer;
+			}
+		}
+
+		.modal-content {
+			overflow: hidden;
+
+		}
+
+		.modal-header {
+			@include media-breakpoint-down(sm) {
+				padding-left: $spacer;
+				padding-right: $spacer;
+			}
+		}
+
+		.modal-sub-header {
+			display: block;
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+			margin-bottom: $spacer;
+		}
+
+
+		.modal-img {
+			min-height: rem( 250 );
+			background-size: cover;
+			background-position: center top;
+			@include media-breakpoint-up(lg) {
+				min-height: rem( 500 );
+			}
+
+			.close {
+				@include media-breakpoint-down(md) {
+					padding: 1rem;
+				}
+			}
+		}
+
+		.modal-body {
+			color: $text-muted;
+			@include media-breakpoint-down(sm) {
+				padding-left: $spacer;
+				padding-right: $spacer;
+			}
+		}
+	}
+}

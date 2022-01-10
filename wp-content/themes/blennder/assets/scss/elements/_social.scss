@@ -1,0 +1,64 @@
+/******************
+ *
+ * Social Share
+ *
+ ******************/
+
+.social-share {
+	margin-bottom: 0;
+
+	a {
+		color: var( --white );
+		line-height: 1;
+		font-size: rem( 22 );
+
+		&:hover {
+			i[class*='fa'] {
+				transition: all ease-out 0.25s;
+				transform: translateY( -1px );
+			}
+
+			[class*='facebook'] {
+				color: $facebook;
+			}
+
+			[class*='twitter'] {
+				color: $twitter;
+			}
+
+			[class*='instagram'] {
+				background: linear-gradient( 225deg, $instagram-yellow, $instagram-red, $instagram-purple );
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-fill-color: transparent;
+			}
+
+			[class*='youtube'] {
+				color: $youtube;
+			}
+
+			[class*='flickr'] {
+				background: linear-gradient( to right, $flickr-blue 0%, $flickr-blue 50%, $flickr-pink 50%, $flickr-pink 100% );
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-fill-color: transparent;
+			}
+
+			[class*='pinterest'] {
+				color: $pinterest;
+			}
+
+			[class*='linkedin'] {
+				color: $linkedin;
+			}
+
+			[class*='google-plus'] {
+				color: $google-plus;
+			}
+		}
+
+		#mobileMenuContainer & {
+			color: var( --black );
+		}
+	}
+}

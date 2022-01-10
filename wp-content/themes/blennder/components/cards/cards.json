@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"default_fields": {
+		"cards_layout": "grid",
+		"cards_show_images": true,
+		"cards_image_position": "cover",
+		"cards_carousel_layout": "title-top",
+		"cards_carousel_show_navigation": true,
+		"cards_carousel_show_pagination": true,
+		"cards_carousel_autoplay": false,
+		"cards_carousel_autoplay_delay": 3000,
+		"cards_carousel_loop": false,
+		"cards_carousel_speed": 300,
+		"cards_carousel_lazy_load": true
+	},
+	"container_fluid": "pr-0 padding-left-dynamic"
+}

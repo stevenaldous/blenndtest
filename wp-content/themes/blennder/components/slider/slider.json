@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"default_fields": {
+		"slider_carousel_show_navigation": true,
+		"slider_carousel_show_pagination": true,
+		"slider_carousel_autoplay": false,
+		"slider_carousel_autoplay_delay": 3000,
+		"slider_carousel_loop": false,
+		"slider_carousel_speed": 1000,
+		"slider_carousel_lazy_load": true,
+		"slider_carousel_parallax": true,
+		"container": "container-fluid"
+	},
+	"container": "px-0"
+}

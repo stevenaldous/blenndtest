@@ -1,0 +1,12 @@
+import './bootstrap';
+import '@fancyapps/fancybox';
+import './modules/global';
+import './modules/navigation';
+import './modules/menu';
+import './modules/header-search';
+import './modules/footer';
+import './modules/aos';
+import './modules/blog';
+import './modules/swiper-mobile';
+import './modules/smooth-scroll';
+import '../../components/{*,**/*}/js/*.js';

@@ -1,0 +1,112 @@
+// Wordpress Elements
+
+.screen-reader-text {
+	@include sr-only;
+}
+
+// Pagination
+.navigation.pagination {
+	justify-content: center;
+
+	.nav-links {
+		display: flex;
+
+		.page-numbers {
+			padding: $pagination-padding-y $pagination-padding-x;
+			flex: auto;
+			line-height: rem( 30 );
+			border: solid $pagination-border-width $pagination-border-color;
+			color: $pagination-color;
+			font-weight: $font-weight-normal;
+			background-color: $pagination-bg;
+			width: rem( 35 );
+			height: rem( 30 );
+			text-align: center;
+			border-right: 1px solid $pagination-color;
+			@include media-breakpoint-up(md) {
+				width: rem( 52 );
+				height: rem( 44 );
+				line-height: $pagination-line-height;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+
+			&.dots:hover {
+				background-color: initial;
+			}
+
+			&:hover {
+				color: $pagination-hover-color;
+				background-color: $pagination-hover-bg;
+				border-color: $pagination-hover-border-color;
+			}
+
+			&.current {
+				color: $pagination-active-color;
+				background-color: $pagination-active-bg;
+				border-color: $pagination-active-border-color;
+			}
+
+			&.prev,
+			&.next {
+				width: auto;
+
+				span {
+					@include media-breakpoint-down(sm) {
+						display: none;
+					}
+				}
+			}
+
+			&.prev {
+				padding-right: $spacer * 0.75;
+				@include media-breakpoint-up(md) {
+					padding-right: $spacer * 1.5;
+				}
+			}
+
+			&.next {
+				padding-left: $spacer * 0.75;
+				@include media-breakpoint-up(md) {
+					padding-left: $spacer * 1.5;
+				}
+			}
+		}
+	}
+}
+
+// Captions
+.wp-caption,
+.wp-block-image figure {
+	@extend .figure;
+}
+
+.wp-caption-text,
+.wp-block-image figure figcaption {
+	@extend .figure-caption;
+	border: 1px solid $gray-200;
+	background-color: $light;
+	margin: 0;
+	padding: rem( 10 );
+	text-align: center;
+}
+
+//Image Alignment
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1rem;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1rem;
+}

@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"default_fields": {
+		"component_header_tag": "h1",
+		"hero_size": "lg",
+		"hero_text_positioning": "center center",
+		"hero_arrow": false,
+		"background_type": "color",
+		"background_image_attachment": "fixed",
+		"background_enable_overlay": true
+	},
+	"classes": {
+		"background_type": "color",
+		"hero_size": "lg"
+	}
+}

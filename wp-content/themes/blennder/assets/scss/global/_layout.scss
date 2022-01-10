@@ -1,0 +1,38 @@
+/******************
+ *
+ * Layout
+ *
+ ******************/
+
+body {
+	&.fixed-header {
+		padding-top: $header-height-mobile;
+		@include media-breakpoint-up(md) {
+			padding-top: $header-height;
+		}
+
+		&.has-preheader {
+			padding-top: calc( #{$header-height-mobile} + #{$preheader-height-mobile} );
+			@include media-breakpoint-up(md) {
+				padding-top: calc( #{$header-height} + #{$preheader-height} );
+			}
+		}
+	}
+
+	&.menu-open {
+		@include media-breakpoint-up(md) {
+			height: 100vh;
+			overflow-y: hidden;
+		}
+	}
+
+	&.mobile-menu-expanded {
+		max-height: 100vh;
+		overflow-y: hidden;
+	}
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}

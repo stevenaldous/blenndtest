@@ -1,0 +1,10 @@
+{
+	"version": 1,
+	"default_fields": {
+		"component_header_tag": "h2",
+		"accordion_type": "full",
+		"accordion_items_icon_type": "far",
+		"accordion_items_icon_opened": "minus",
+		"accordion_items_icon_closed": "plus"
+	}
+}

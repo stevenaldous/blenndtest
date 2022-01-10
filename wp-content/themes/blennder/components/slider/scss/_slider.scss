@@ -1,0 +1,243 @@
+/************
+ *
+ * Slider Styles
+ *
+ ***********/
+
+.slider {
+	&__content {
+		height: 100%;
+
+		.row {
+			height: 100%;
+		}
+	}
+
+	.swiper-container {
+		width: 100%;
+		height: 100%;
+
+		&--full {
+			.swiper-slide {
+				@include media-breakpoint-up(xl) {
+					min-height: 500px;
+					height: calc( 100vh - #{$header-height} );
+				}
+			}
+		}
+
+		&--contained {
+			.swiper-slide {
+				@include media-breakpoint-up(xl) {
+					padding-left: rem( 60 );
+					padding-right: rem( 60 );
+				}
+			}
+
+			.swiper-button-prev {
+				@include media-breakpoint-up(xl) {
+					left: rem( 15 );
+				}
+			}
+
+			.swiper-button-next {
+				@include media-breakpoint-up(xl) {
+					right: rem( 15 );
+				}
+			}
+		}
+	}
+
+	.swiper-slide {
+		position: relative;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: var( --white );
+		padding: rem( 30 ) rem( 30 ) rem( 120 );
+		height: auto;
+		min-height: 300px;
+		@include media-breakpoint-up(md) {
+			min-height: 500px;
+		}
+		@include media-breakpoint-up(lg) {
+			min-height: 650px;
+		}
+		@include media-breakpoint-up(xl) {
+			padding-left: rem( 150 );
+			padding-right: rem( 150 );
+			min-height: 700px;
+		}
+
+		&.has-overlay {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: block;
+				background-color: var( --black );
+				opacity: 0.4;
+			}
+
+			&.text-left {
+				&:before {
+					background-color: transparent;
+					background-image: linear-gradient( to right, rgba( $black, 0.4 ) 0%, rgba( $black, 0.4 ) 40%, transparent 100% );
+				}
+			}
+
+			&.text-right {
+				&:before {
+					background-color: transparent;
+					background-image: linear-gradient( to left, rgba( $black, 0.4 ) 0%, rgba( $black, 0.4 ) 40%, transparent 100% );
+				}
+			}
+		}
+
+		// &--contained {
+		// 	@include media-breakpoint-up(md) {
+		// 		background-size: 50%;
+		// 	}
+
+		// 	.slider__content {
+		// 		@include media-breakpoint-up(md) {
+		// 			width: 50%;
+		// 		}
+		// 	}
+		// }
+
+		&--img-left {
+			@include media-breakpoint-up(md) {
+				background-position: left;
+			}
+		}
+
+		&--img-right {
+			@include media-breakpoint-up(md) {
+				background-position: right;
+			}
+		}
+
+		.preheader {
+			font-weight: $font-weight-bold;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+		}
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: var( --white );
+		border-color: var( --white );
+
+		&:hover {
+			background-color: var( --white );
+			color: var( --black );
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.35;
+		}
+	}
+
+	&--preview-next {
+		.swiper-slide {
+			width: calc( 100vw - 60px );
+			@include media-breakpoint-up(md) {
+				width: calc( 100vw - 150px );
+			}
+		}
+	}
+
+	&--background-dark {
+		.swiper-button-prev,
+		.swiper-button-next {
+			color: var( --white );
+		}
+	}
+
+	&--image-contained {
+		.swiper-button-prev,
+		.swiper-button-next {
+			border-color: var( --black );
+			color: var( --black );
+		}
+
+		.slider__content {
+			@include media-breakpoint-up(md) {
+				color: var( --black ) !important;
+			}
+		}
+
+		.swiper-slide--img-left {
+			.slider__content {
+				margin-right: 0;
+			}
+		}
+
+		.swiper-slide--img-right {
+			.slider__content {
+				margin-left: 0;
+			}
+		}
+	}
+
+	&--image_text_overlap-true {
+		.swiper-slide {
+			.slider__content {
+				margin-left: 0;
+				width: 100%;
+
+				@include media-breakpoint-up(xl) {
+					width: rem( 1040 );
+				}
+			}
+
+			.slide__content {
+				@include media-breakpoint-up(md) {
+					max-width: 50%;
+				}
+			}
+		}
+	}
+
+	.swiper-navigation--left,
+	.swiper-pagination--left {
+		margin-left: rem( 48 );
+		@include media-breakpoint-up(md) {
+			margin-left: rem( 18 );
+		}
+	}
+
+	.swiper-navigation--right,
+	.swiper-pagination--right {
+		margin-right: rem( 48 );
+		@include media-breakpoint-up(md) {
+			margin-right: rem( 18 );
+		}
+	}
+}
+
+.swiper-navigation--wrapper-left ~ .swiper-pagination--wrapper-left .swiper-pagination {
+	margin-left: rem( 185 );
+	@include media-breakpoint-up(md) {
+		margin-left: rem( 150 );
+	}
+}
+
+.slider--preview-next.slider--image-contained.slider--image_position-left {
+	.swiper-slide {
+		@include media-breakpoint-up(md) {
+			background-size: calc( 50% - 100px );
+			background-position: 50px;
+
+			&:first-of-type {
+				background-position: 100px;
+			}
+
+		}
+	}
+}

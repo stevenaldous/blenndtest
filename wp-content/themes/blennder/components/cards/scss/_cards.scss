@@ -1,0 +1,40 @@
+/************
+ *
+ * Cards Styles
+ *
+ ***********/
+
+.cards {
+	$this: &;
+
+
+	&__slider {
+		margin: 0 rem( -15 );
+		@include media-breakpoint-up(md) {
+			margin: 0 (-$grid-gutter-width * 0.5);
+		}
+
+		&--full-width {
+			#{$this}__slider {
+				margin-right: 0;
+			}
+		}
+
+		.card {
+			height: 100%;
+		}
+	}
+
+	&__slide {
+		padding: rem( 15 );
+		height: auto;
+		transition: opacity 0.3s ease-in-out;
+		@include media-breakpoint-up(md) {
+			padding: $grid-gutter-width * 0.5;
+		}
+
+		&.swiper-slide-partial {
+			opacity: 0.5;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"version": 1,
+	"default_fields": {
+		"component_header_style": "display-2",
+		"component_header_tag": "h2",
+		"wysiwyg_layout": "default"
+	},
+	"classes": {
+		"wysiwyg_layout": "default"
+	}
+}

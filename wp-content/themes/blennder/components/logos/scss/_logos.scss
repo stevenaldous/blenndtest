@@ -1,0 +1,170 @@
+/************
+ *
+ * Logo Scroller Styles
+ *
+ ***********/
+
+.logos {
+	$this: &;
+
+
+	&__slider-wrapper {
+		@include media-breakpoint-down(md) {
+			margin: 0 (-$grid-gutter-width * 0.5);
+		}
+	}
+
+	&__slider {
+		.swiper-wrapper {
+			transition-timing-function: linear !important;
+		}
+	}
+
+	&__slide {
+		height: auto;
+	}
+
+	.card {
+		min-height: 100%;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		text-align: center;
+		border-radius: 0;
+		box-shadow: none;
+
+		.card-img {
+			max-height: 50px;
+			width: auto;
+			max-width: 100px;
+			transition: filter 0.5s;
+			border-radius: 0;
+			@include media-breakpoint-up(md) {
+				max-height: 70px;
+				max-width: 150px;
+			}
+
+		}
+
+		&--grayscale {
+			filter: grayscale( 100% );
+			transition: all 0.3s;
+
+			&:hover {
+				filter: grayscale( 0 );
+			}
+		}
+	}
+
+	.card-deck {
+		.card {
+			display: flex;
+			align-items: center;
+			padding: 1.5rem 0;
+
+			@include media-breakpoint-up(md) {
+				padding: 3.5rem 0;
+			}
+		}
+
+		&--shadowed {
+			.card {
+				box-shadow: 3px 1px 13px -4px #a3a3a3;
+				border: none !important;
+				min-height: rem( 100 );
+				@include media-breakpoint-up(md) {
+					min-height: rem( 180 );
+				}
+			}
+		}
+
+		&--bordered {
+			justify-content: center;
+
+			.card {
+				margin: 0;
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				@include media-breakpoint-down(sm) {
+					border-bottom: 1px solid $border-color;
+				}
+
+				@include media-breakpoint-up(md) {
+					border-left: 1px solid $border-color;
+
+					&:first-child {
+						border-left: none;
+					}
+				}
+			}
+
+			@include media-breakpoint-only(sm) {
+				&.card-deck-sm-rows .card {
+					border-bottom: 1px solid $border-color;
+				}
+			}
+			@include media-breakpoint-only(md) {
+				&.card-deck-md-rows .card {
+					border-bottom: 1px solid $border-color;
+				}
+			}
+			@include media-breakpoint-only(lg) {
+				&.card-deck-lg-rows .card {
+					border-bottom: 1px solid $border-color;
+				}
+			}
+			@include media-breakpoint-only(xl) {
+				&.card-deck-xl-rows .card {
+					border-bottom: 1px solid $border-color;
+				}
+			}
+
+			&:not([class*='card-deck-']) {
+				@include media-breakpoint-only(md) {
+					.card {
+						flex-basis: calc( 100% / 2 );
+
+						&:nth-child(2n+1) {
+							border-left: none;
+						}
+					}
+				}
+				@include media-breakpoint-up(lg) {
+					.card {
+						flex-basis: calc( 100% / 3 );
+
+						&:nth-child(3n+1) {
+							border-left: none;
+						}
+					}
+				}
+			}
+
+			@each $breakpoint in map-keys($grid-breakpoints) {
+				@include media-breakpoint-only($breakpoint) {
+					$infix: breakpoint-infix( $breakpoint, $grid-breakpoints );
+					@for $i from 1 through ( $grid-columns * 0.5 ) {
+						&.card-deck#{$infix}-#{$i} .card {
+							flex-basis: calc( 100% / #{$i} );
+							border-left: 1px solid $border-color;
+							&:nth-child(#{$i}n+1) {
+								border-left: none;
+							}
+						}
+					}
+					@for $x from 1 through $grid-columns {
+						&.card-deck-border#{$infix}-#{$x} .card {
+							&:nth-child( n+#{$x+1} ) {
+								border-bottom: none;
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

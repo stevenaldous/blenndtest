@@ -1,0 +1,168 @@
+/************
+ *
+ * Tabs Styles
+ *
+ ***********/
+
+
+.tabs {
+	$this: &;
+
+	&__media {
+		display: inline-block;
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+
+		&--image img {
+			height: rem( 24 );
+			width: auto;
+			@include media-breakpoint-up(md) {
+				height: rem( 60 );
+			}
+		}
+
+		&--icon {
+			line-height: 1;
+			color: $gray-300;
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+	}
+
+
+	&__content {
+		@include media-breakpoint-down(sm) {
+			padding-top: rem( 30 );
+		}
+	}
+
+	&__panel-content {
+		color: $gray-800;
+	}
+
+	&__panel-img-col {
+		min-height: 200px;
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem( 30 );
+		}
+		@include media-breakpoint-up(md) {
+			min-height: 320px;
+		}
+		@include media-breakpoint-up(lg) {
+			min-height: 480px;
+		}
+	}
+
+	&__panel-image {
+		@include border-radius($border-radius-lg);
+		object-fit: cover;
+		height: 100%;
+	}
+
+	&__icon-wrap {
+		&--left {
+			display: inline-flex;
+			align-items: center;
+
+			#{$this}__media--icon {
+				font-size: rem( 18 );
+				margin-right: 8px;
+				margin-bottom: 0;
+			}
+		}
+
+		&--top {
+			display: block;
+
+			#{$this}__media--icon {
+				font-size: rem( 22 );
+				@include media-breakpoint-up(md) {
+					font-size: rem( 30 );
+					margin-bottom: $spacer * 1.5;
+				}
+			}
+		}
+	}
+
+	&--top {
+		#{$this}__content {
+			padding-top: rem( 30 );
+			@include media-breakpoint-up(lg) {
+				padding: rem( 70 ) 0 0;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	&--left,
+	&--right {
+		@include media-breakpoint-up(md) {
+			#{$this}__nav {
+				width: rem( 200 );
+				display: block;
+
+				#{$this}__nav-item {
+					margin: 0;
+				}
+
+				#{$this}__nav-link {
+					text-align: left;
+				}
+
+				#{$this}__media--icon,
+				#{$this}__media--image {
+					display: none;
+				}
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			#{$this}__nav {
+				width: rem( 280 );
+			}
+		}
+		@include media-breakpoint-up(xl) {
+			#{$this}__nav {
+				width: rem( 330 );
+			}
+		}
+	}
+}
+
+// Works best with bootstrap variables if its not nexted inside another class
+.nav-tabs {
+	border: none;
+	align-items: flex-end;
+
+	.nav-item {
+		display: block;
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			flex: 1;
+			width: auto;
+		}
+	}
+
+	.nav-link {
+		text-align: center;
+		line-height: 1;
+		font-weight: $font-weight-semibold;
+		color: $dark;
+		padding: $spacer;
+		border-bottom-color: $nav-tabs-border-color;
+		border-top-width: 0;
+		border-right-width: 0;
+		border-left-width: 0;
+		display: block;
+
+		&.active {
+			.tabs__media--icon {
+				i {
+					color: var( --primary );
+				}
+			}
+		}
+	}
+}

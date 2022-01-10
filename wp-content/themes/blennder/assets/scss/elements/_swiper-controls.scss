@@ -1,0 +1,285 @@
+.swiper {
+	position: relative;
+}
+
+.swiper-pagination {
+	bottom: rem( 48 );
+	z-index: 3;
+
+	&--wrapper {
+		position: relative;
+	}
+
+	&--left {
+		left: 0;
+		text-align: left;
+	}
+
+	&--right {
+		right: 0;
+		text-align: right;
+	}
+
+	&--default,
+	&--center {
+		left: 50%;
+		transform: translateX( -50% );
+	}
+
+	&--center {
+		position: absolute;
+	}
+}
+
+.swiper-navigation {
+	&--wrapper {
+		&-left,
+		&-right {
+			position: relative;
+		}
+
+		&-sides {
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			left: 50%;
+			transform: translate( -50%, -50% );
+
+			.swiper-navigation {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+
+	&--left,
+	&--right {
+		position: absolute;
+		bottom: rem( 64 );
+		width: rem( 104 );
+
+		.swiper-button-prev {
+			left: 0;
+		}
+
+		.swiper-button-next {
+			right: 0;
+		}
+	}
+
+	&--left {
+		left: 0;
+	}
+
+	&--right {
+		right: 0;
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background: none;
+	font-family: $font-fa;
+	font-weight: $font-weight-light;
+	color: var( --black );
+	border: $border-width solid var( --black );
+	width: rem( 45 );
+	height: rem( 45 );
+	line-height: rem( 45 );
+	border-radius: 50%;
+	text-align: center;
+	margin-top: 0;
+	transition: $animate;
+	transform: translateY( -50% );
+
+	&:hover {
+		color: var( --white );
+		background-color: var( --black );
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.swiper-button-disabled {
+		opacity: 1;
+		color: $gray-300;
+		border-color: $gray-300;
+	}
+}
+
+.swiper-button-prev {
+	&:before {
+		content: fa-content( $fa-var-chevron-left );
+	}
+}
+
+.swiper-button-next {
+	&:before {
+		content: fa-content( $fa-var-chevron-right );
+	}
+}
+
+// Swiper Pagination Bullets
+.swiper-pagination-bullet {
+	margin: 0 rem( 5 );
+	background: $gray-100;
+	border: none;
+	width: rem( 10 );
+	height: rem( 10 );
+	opacity: 1;
+	font-size: rem( 10 );
+	border-radius: 50%;
+	padding: 0 rem( 6 );
+
+	&:focus {
+		outline: none;
+	}
+
+	&.swiper-pagination-bullet-active {
+		background: var( --primary );
+	}
+
+	.swiper-pagination--square & {
+		border-radius: 0;
+	}
+
+	.swiper-pagination--lg & {
+		width: rem( 12 );
+		height: rem( 12 );
+		font-size: rem( 12 );
+	}
+
+	.swiper-pagination--sm & {
+		width: rem( 8 );
+		height: rem( 8 );
+		font-size: rem( 8 );
+	}
+}
+
+
+.swiper-controls {
+	&--bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: map-get( $spacers, 4 );
+
+		.swiper-pagination {
+			position: static;
+		}
+
+		// Swiper Buttons
+		.swiper-navigation {
+			display: flex;
+			justify-content: space-between;
+			width: rem( 105 );
+
+			.swiper-button-prev,
+			.swiper-button-next {
+				position: static;
+				transform: none;
+			}
+		}
+	}
+
+	&--center-center {
+		.swiper-pagination {
+			left: 0;
+			@include media-breakpoint-up(md) {
+				left: 50%;
+				transform: translateX( -50% );
+			}
+		}
+	}
+
+	&--center-left {
+		.swiper-pagination {
+			left: 0;
+		}
+	}
+
+	&--center-center,
+	&--center-left {
+		@include media-breakpoint-down(sm) {
+			padding-left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: map-get( $spacers, 4 );
+
+			.swiper-pagination {
+				position: static;
+			}
+
+			// Swiper Buttons
+			.swiper-navigation {
+				display: flex;
+				justify-content: space-between;
+				width: rem( 105 );
+
+				.swiper-button-prev,
+				.swiper-button-next {
+					position: static;
+					transform: none;
+				}
+			}
+		}
+	}
+
+	&--navigation-pagination {
+		.swiper-navigation {
+			order: -1;
+		}
+	}
+
+	// Modifier when Swiper controls are set to outside
+	&--outside {
+		width: 100%;
+
+		.swiper-button-prev {
+			left: rem( -8 );
+		}
+
+		.swiper-button-next {
+			right: rem( -8 );
+		}
+
+		.swiper-pagination {
+			left: 50%;
+			transform: translateX( -50% );
+		}
+
+		&.swiper--pagination-enabled {
+			padding-bottom: rem( 30 );
+		}
+
+		&.swiper--navigation-enabled {
+			padding-left: $grid-gutter-width;
+			padding-right: $grid-gutter-width;
+		}
+		@include media-breakpoint-up(md) {
+			.swiper-button-prev {
+				left: -$grid-gutter-width * 0.5;
+			}
+
+			.swiper-button-next {
+				right: -$grid-gutter-width * 0.5;
+			}
+		}
+		@media screen and ( min-width: 1280px ) {
+			.swiper-button-prev {
+				left: -$grid-gutter-width * 2;
+			}
+
+			.swiper-button-next {
+				right: -$grid-gutter-width * 2;
+			}
+
+			&.swiper--navigation-enabled {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}

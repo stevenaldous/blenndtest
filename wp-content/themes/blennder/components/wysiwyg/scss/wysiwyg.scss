@@ -1,0 +1,20 @@
+/************
+ *
+ * WYSIWYG Styles
+ *
+ ***********/
+
+.wysiwyg {
+	$this : &;
+
+	&--content-columns {
+		#{$this}__content {
+			@include media-breakpoint-up(md) {
+				column-count: 2;
+			}
+			@include media-breakpoint-up(lg) {
+				column-gap: rem( 70 );
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+/*******
+ *
+ * Error 404 Template
+ *
+ *******/
+
+.error-404 {
+	@include media-breakpoint-up(md) {
+		height: calc( 100vh - #{$header-height} );
+	}
+
+	&--bg-img {
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: var( --black );
+			opacity: 0.4;
+		}
+	}
+
+	&--light {
+		color: var( --white );
+	}
+}

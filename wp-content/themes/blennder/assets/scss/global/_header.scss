@@ -1,0 +1,105 @@
+/******************
+ *
+ * Global Header
+ *
+ ******************/
+
+.btn-close {
+	display: flex;
+	justify-content: flex-end;
+	margin: 1rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+
+.header-search {
+	cursor: pointer;
+	position: relative;
+
+	&:after {
+		width: 0;
+		content: '';
+		height: rem( 2 );
+		position: absolute;
+		left: 0;
+		bottom: rem( -20 );
+		background-color: var( --primary );
+		transition: all 0.3s ease-in-out;
+	}
+
+	&.active {
+		&:after {
+			width: 100%;
+		}
+	}
+}
+
+#header-search {
+	display: none;
+	position: fixed;
+	background: var( --white );
+	z-index: 2024;
+	padding: rem( 16 );
+
+	&.search-full {
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+	}
+
+	&.search-short {
+		h3,
+		.btn-close {
+			display: none;
+		}
+	}
+}
+
+#header {
+	.admin-bar & {
+		top: 46px;
+		@media screen and ( min-width: 783px ) {
+			top: 32px;
+		}
+	}
+}
+
+.col-default,
+.col-icon,
+.col-mega {
+	position: unset;
+	display: flex;
+	align-items: center;
+
+	&:last-of-type {
+		justify-content: flex-end;
+	}
+
+	i {
+		font-size: rem( 23 );
+		color: black;
+		margin: 0 rem( 15 );
+	}
+}
+
+.col-icon {
+	.dropdown {
+		position: unset;
+
+		&-menu {
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			max-width: 100vw;
+			justify-content: space-around;
+
+			@include media-breakpoint-up(xl) {
+				width: 1300px;
+			}
+		}
+	}
+}

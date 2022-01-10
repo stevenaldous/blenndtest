@@ -1,0 +1,7 @@
+{
+	"version": 1,
+	"default_fields": {
+		"image_gallery_columns": 3
+	},
+	"container_fluid": "px-0"
+}

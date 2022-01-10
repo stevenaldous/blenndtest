@@ -1,0 +1,19 @@
+{
+	"version": 1,
+	"default_fields": {
+		"testimonials_posts_source": "wp_query",
+		"testimonials_posts_per_page": -1,
+		"testimonials_layout": "feed",
+		"testimonials_layout_cards": "grid",
+		"testimonials_show_featured_image": true,
+		"testimonials_cards_image_position": "top",
+		"testimonials_carousel_show_navigation": true,
+		"testimonials_carousel_show_pagination": true,
+		"testimonials_carousel_loop": true,
+		"testimonials_carousel_lazy_load": false,
+		"testimonials_swiper_controls_layout": "center-center",
+		"testimonials_card_template": "image-left",
+		"testimonials_layout_cards": "list",
+		"testimonials_cards_text_align": "left"
+	}
+}

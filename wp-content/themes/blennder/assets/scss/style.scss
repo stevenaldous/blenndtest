@@ -1,0 +1,40 @@
+/******* Variable *******/
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+//Bootstrap Overwrites
+@import 'variables-bootstrap';
+
+/******* 3rd Party *******/
+@import 'bootstrap';
+@import '~aos/src/sass/aos.scss';
+@import '~swiper/swiper.scss';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
+
+/******* Font Awesome *******/
+@import '~@fortawesome/fontawesome-pro/scss/fontawesome';
+@import '~@fortawesome/fontawesome-pro/scss/brands';
+@import '~@fortawesome/fontawesome-pro/scss/regular';
+@import '~@fortawesome/fontawesome-pro/scss/solid';
+@import '~@fortawesome/fontawesome-pro/scss/light';
+// @import '~@fortawesome/fontawesome-pro/scss/thin';
+// @import '~@fortawesome/fontawesome-pro/scss/duotone';
+
+/******* Global Site *******/
+@import 'global/**/*.scss';
+
+/******* Global Elements *******/
+@import 'elements/**/*.scss';
+
+/******* Component Specific Styles ( DO NOT EDIT ) ********/
+@import '../../components/**/scss/*.scss';
+
+/******* Widgets Specific Styles ( DO NOT EDIT ) ********/
+// @import "../../widgets/**/scss/*.scss";
+
+/******* Template Specific Styles ( DO NOT EDIT ) ********/
+@import 'templates/**/*.scss';
+
+/******* Page-Specific Styles ( DO NOT EDIT ) ********/
+// @import "pages/**/*.scss";

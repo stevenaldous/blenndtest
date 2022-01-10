@@ -1,0 +1,10 @@
+{
+	"version": 1,
+	"default_fields": {
+		"heading_alignment": "left",
+		"tabs_layout": "top"
+	},
+	"classes": {
+		"tabs_layout": "top"
+	}
+}

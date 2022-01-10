@@ -1,0 +1,203 @@
+/* FIX for ACF lyout manager creating side scroll in admin */
+.acf-flm-input-copy-all-layouts {
+	width: 0 !important;
+	padding: 0 !important;
+}
+
+/* ACF Component Popup */
+.acf-fc-popup {
+	width: 85%;
+	height: 85%;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate( -50%, -50% );
+	border-radius: 0;
+	position: fixed !important;
+	background: none !important;
+	padding: 0;
+	margin-left: 0 !important;
+	box-sizing: border-box;
+}
+@media only screen and ( min-width: 783px ) {
+	.acf-fc-popup {
+		width: calc( 100% - 36px );
+		left: calc( 50% + 18px ) !important;
+		height: calc( 100% - 32px );
+		top: calc( 50% + 16px ) !important;
+	}
+}
+@media only screen and ( min-width: 961px ) {
+	.acf-fc-popup {
+		width: calc( 100% - 161px );
+		left: calc( 50% + 80px ) !important;
+	}
+}
+
+.acf-fc-popup * {
+	box-sizing: border-box;
+}
+
+.acf-fc-popup::before,
+.acf-fc-popup::after {
+	border-color: transparent !important;
+}
+
+.acf-fc-popup:before {
+	top: -100% !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: -100% !important;
+	position: fixed;
+	background: rgba( 0, 0, 0, 0.7 );
+	height: 200vh;
+	width: 200vw;
+	margin: 0 !important;
+	padding: 0;
+	content: '';
+}
+
+.acf-fc-popup ul {
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	background: #f4f4f4;
+	border: #cccccc;
+	padding: 15px;
+	position: relative;
+	box-shadow: 0 0 8px rgba( 0, 0, 0, 0.5 );
+	padding-top: 60px !important;
+}
+
+.acf-fc-popup ul:after,
+.acf-fc-popup ul:before {
+	position: absolute;
+	top: 30px;
+	color: #333333;
+}
+
+.acf-fc-popup ul:before {
+	font-size: 23px;
+	font-weight: 400;
+	left: 30px;
+	content: 'Components';
+}
+
+.acf-fc-popup ul:after {
+	content: 'x';
+	right: 30px;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.acf-fc-popup ul:hover:after {
+	cursor: pointer;
+}
+
+.acf-fc-popup ul li {
+	width: 14.285%;
+	padding: 35px 5px 0;
+	float: left;
+}
+
+@media only screen and ( max-width: 1780px ) {
+	.acf-fc-popup ul li {
+		width: 16.666%;
+	}
+}
+@media only screen and ( max-width: 1560px ) {
+	.acf-fc-popup ul li {
+		width: 20%;
+	}
+}
+@media only screen and ( max-width: 1340px ) {
+	.acf-fc-popup ul li {
+		width: 25%;
+	}
+}
+
+@media only screen and ( max-width: 1120px ) {
+	.acf-fc-popup ul li {
+		width: 33.3333333%;
+	}
+}
+
+@media only screen and ( max-width: 782px ) {
+	.acf-fc-popup ul li {
+		width: 50%;
+	}
+}
+@media only screen and ( max-width: 600px ) {
+	.acf-fc-popup ul li {
+		width: 100%;
+	}
+}
+
+.acf-fc-popup ul li a {
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 132px;
+	border: 1px solid #dddddd;
+}
+
+.acf-fc-popup ul li a i {
+	font-size: 22px;
+	vertical-align: text-top;
+	margin-right: 10px;
+}
+
+.acf-fc-popup a {
+	position: relative;
+	color: #ffffff;
+	font-size: 18px;
+	padding: 10px 12px;
+}
+
+.acf-fc-popup a:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	background-color: rgba( 0, 115, 170, 0 );
+}
+
+.acf-fc-popup a:hover {
+	background-size: cover;
+	background-position: center center;
+	box-shadow: 0 0 12px -2px rgba( 87, 87, 88, 0.3 );
+	cursor: pointer;
+}
+
+.acf-fc-popup a:hover:before {
+	background-color: rgba( 0, 115, 170, 0.3 );
+}
+
+.acf-fc-popup div + .acf-fc-popup a:hover {
+	color: #eeeeee;
+}
+
+.acf-fc-popup div {
+	transition: all 0.35s ease;
+	background-color: white;
+	position: absolute;
+	top: -25px;
+	left: -1px;
+	height: 25px;
+	width: calc( 100% + 2px );
+	padding: 0 10px;
+	color: black;
+	font-size: 13px;
+	line-height: 25px;
+	text-transform: uppercase;
+	border: 1px solid #cccccc;
+	text-align: center;
+}
+
+.acf-fc-popup a:hover div {
+	background-color: #555555;
+	color: white;
+	box-shadow: 0 0 12px -2px rgba( 87, 87, 88, 0.3 );
+}

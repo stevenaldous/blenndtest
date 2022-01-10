@@ -1,0 +1,28 @@
+/************
+ *
+ * Map Styles
+ *
+ ***********/
+
+.map {
+	$this : &;
+	padding-bottom: 0;
+	@include media-breakpoint-up(md) {
+		.container-fluid #{$this}__header {
+			max-width: map-get( $container-max-widths, 'xl' );
+			margin: 0 auto;
+			padding-left: $grid-gutter-width * 0.5;
+			padding-right: $grid-gutter-width * 0.5;
+		}
+	}
+
+	.acf-map,
+	iframe {
+		width: 100%;
+	}
+
+	.locations__map {
+		height: rem( 600 );
+		width: 100%;
+	}
+}

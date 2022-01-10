@@ -1,0 +1,229 @@
+/************
+ *
+ * Image Gallery Styles
+ *
+ ***********/
+
+@use 'sass:math';
+
+@mixin gallery-overlay {
+	a {
+		position: relative;
+		display: block;
+
+		&:before ,
+		&:after {
+			position: absolute;
+			content: '';
+			display: block;
+			z-index: 1;
+		}
+
+		&:before {
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			transition: background-color 0.25s ease-in-out;
+			background-color: rgba( $primary, 0 );
+			@include border-radius($border-radius-lg);
+		}
+
+		&:after {
+			content: fa-content( $fa-var-expand-alt );
+			font-family: $font-fa;
+			color: var( --white );
+			font-size: rem( 30 );
+			font-weight: 100;
+			top: 50%;
+			left: 50%;
+			transform: translateY( -50% ) translateX( -50% );
+			z-index: 2;
+			opacity: 0;
+			transition: opacity 0.25s ease-in-out;
+			@include media-breakpoint-up(lg) {
+				font-size: rem( 56 );
+			}
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		a {
+			&:before {
+				background-color: rgba( $primary, 0.75 );
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.image-gallery {
+	$this: &;
+
+	.grid {
+		.grid-gutter {
+			width: $grid-gutter-width * 0.25;
+			@include media-breakpoint-up(md) {
+				width: $grid-gutter-width * 0.5;
+			}
+		}
+
+		.grid-item {
+			width: calc( 50% - ( #{$grid-gutter-width} / 8 ) );
+			margin-bottom: $grid-gutter-width * 0.25;
+			@include media-breakpoint-up(md) {
+				width: calc( 50% - ( #{$grid-gutter-width} / 4 ) );
+				margin-bottom: $grid-gutter-width * 0.5;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -#{ $grid-gutter-width * 0.125 };
+		margin-right: -#{ $grid-gutter-width * 0.125 };
+		@include media-breakpoint-up(md) {
+			margin-left: -#{ $grid-gutter-width * 0.25 };
+			margin-right: -#{ $grid-gutter-width * 0.25 };
+		}
+
+		.gallery-item {
+			flex: 0 1 33.33%;
+			width: 33.33%;
+			margin-bottom: $grid-gutter-width * 0.25;
+			@include media-breakpoint-up(md) {
+				margin-bottom: $grid-gutter-width * 0.5;
+			}
+
+			.gallery-icon {
+				@include gallery-overlay;
+				padding-left: $grid-gutter-width * 0.125;
+				padding-right: $grid-gutter-width * 0.125;
+				@include media-breakpoint-up(md) {
+					padding-left: $grid-gutter-width * 0.25;
+					padding-right: $grid-gutter-width * 0.25;
+				}
+
+				img {
+					@include border-radius($border-radius-lg);
+				}
+			}
+		}
+		@include media-breakpoint-up(md) {
+			@for $i from 1 through 8 {
+				&.gallery-columns-#{$i} .gallery-item {
+					@if $i != 7 {
+						flex-basis: math.div( 100%, $i );
+						width: math.div( 100%, $i );
+					}
+				}
+			}
+		}
+	}
+
+
+	&__slider {
+		padding-bottom: map-get( $spacers, 5 );
+
+		.swiper-slide {
+			height: 220px;
+			width: calc( 100% - 40px );
+			transition: all 0.85s cubic-bezier( 0.6, 0.8, 0.6, 1 );
+			opacity: 1;
+			padding: 0 $grid-gutter-width * 0.125;
+
+			@include media-breakpoint-up(sm) {
+				width: calc( 100% - 100px );
+				height: 320px;
+			}
+
+			@include media-breakpoint-up(md) {
+				height: 400px;
+				width: calc( 100% - 220px );
+				padding: 0 $grid-gutter-width * 0.25;
+			}
+
+			@include media-breakpoint-up(lg) {
+				height: 625px;
+				width: calc( 100% - 320px );
+			}
+
+			&.swiper-slide-prev,
+			&.swiper-slide-next {
+				opacity: 0.3;
+			}
+
+			.image-gallery__slide-bg {
+				height: 100%;
+				width: 100%;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+
+		.swiper-pagination {
+			width: 100%;
+			bottom: 0;
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			background-color: var( --black );
+			color: var( --white );
+			top: calc( 50% - #{map-get( $spacers, 5 )} / 2 );
+
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+
+			&:hover {
+				background-color: $gray-700;
+				border-color: $gray-700;
+			}
+		}
+
+		.swiper-button-prev {
+			@include media-breakpoint-up(md) {
+				left: rem( 30 );
+			}
+			@include media-breakpoint-up(lg) {
+				left: rem( 50 );
+			}
+		}
+
+		.swiper-button-next {
+			@include media-breakpoint-up(md) {
+				right: rem( 30 );
+			}
+			@include media-breakpoint-up(lg) {
+				right: rem( 50 );
+			}
+		}
+	}
+
+	&__carousel {
+		margin: 0 rem( -10 );
+
+		.swiper-slide {
+			padding: 0 rem( 10 );
+
+			img {
+				@include border-radius($border-radius-lg);
+			}
+
+			@include gallery-overlay;
+		}
+	}
+}

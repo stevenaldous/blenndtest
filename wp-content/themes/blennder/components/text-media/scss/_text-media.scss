@@ -1,0 +1,171 @@
+/************
+ *
+ * Text Media Styles
+ *
+ ***********/
+.text-media {
+	$this : &;
+	position: relative;
+	padding: 0;
+	margin: rem( 24 ) 0;
+	@include media-breakpoint-up(md) {
+		margin: rem( 48 ) 0;
+	}
+
+	&__media {
+		position: relative;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: rem( 250 );
+		@include media-breakpoint-up(md) {
+			height: 100%;
+			min-height: rem( 400 );
+		}
+
+		@include media-breakpoint-up(lg) {
+			min-height: rem( 500 );
+		}
+
+		@include media-breakpoint-up(xl) {
+			min-height: rem( 600 );
+		}
+	}
+
+	&__video {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: rem( 250 );
+
+		@include media-breakpoint-up(md) {
+			height: 100%;
+			min-height: rem( 400 );
+		}
+
+		@include media-breakpoint-up(lg) {
+			min-height: rem( 500 );
+		}
+
+		@include media-breakpoint-up(xl) {
+			min-height: rem( 600 );
+		}
+
+		video {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: 0;
+			transform: translateX( -50% ) translateY( -50% );
+			object-fit: cover;
+		}
+
+		// When using media element player, hide controls completely
+		.mejs-container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: 0;
+			transform: translateX( -50% ) translateY( -50% );
+			background: var( --white );
+
+			.mejs-controls,
+			.mejs-overlay.mejs-overlay-play,
+			.mejs-overlay-loading {
+				display: none !important;
+			}
+		}
+
+		&:hover {
+			#{$this}__video-pause {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__video-play {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translateX( -50% ) translateY( -50% );
+		background-color: var( --primary );
+		color: var( --white );
+		width: rem( 75 );
+		height: rem( 75 );
+		border-radius: 100%;
+		text-align: center;
+
+		&:hover {
+			color: var( --white );
+			background-color: $link-hover-color;
+		}
+
+		i {
+			line-height: rem( 75 );
+		}
+		@include media-breakpoint-up(lg) {
+			width: rem( 100 );
+			height: rem( 100 );
+			font-size: $font-size-lg;
+
+			i {
+				line-height: rem( 100 );
+			}
+		}
+	}
+
+	&__video-pause {
+		z-index: 1000;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: inline-block;
+		margin-bottom: rem( 25 );
+		margin-left: rem( 15 );
+		color: var( --white );
+		line-height: 1;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+
+		&:hover,
+		&:focus {
+			color: $gray-200;
+		}
+
+		&:focus {
+			opacity: 1;
+			box-shadow: $btn-focus-box-shadow;
+		}
+	}
+
+	&--media-top,
+	&--media-bottom {
+
+		#{$this}__media,
+		#{$this}__video {
+			height: rem( 250 );
+			@include media-breakpoint-up(sm) {
+				padding-bottom: 0;
+				height: rem( 300 );
+			}
+			@include media-breakpoint-up(md) {
+				height: rem( 400 );
+			}
+			@include media-breakpoint-up(lg) {
+				height: rem( 500 );
+			}
+			@include media-breakpoint-up(xl) {
+				height: rem( 600 );
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@mixin card-deck-column-count($count: 1, $gutter: $card-deck-margin) {
+	// stylelint-disable
+	flex-grow: 0;
+	flex-shrink: 0;
+	@if $gutter != 0 {
+		flex-basis: calc( 100% / #{$count} - #{$gutter} * 2 );
+	}
+	@else {
+		flex-basis: calc( 100% / #{$count} );
+	}
+	// stylelint-enable
+}
+
+@mixin createNumbered($num, $className) {
+	$foo : '';
+	@for $i from $num through 1 {
+		$foo : $foo + '.' + $className + '-' + $i + ', ';
+	}
+
+	#{$foo} {
+		@content;
+	}
+}

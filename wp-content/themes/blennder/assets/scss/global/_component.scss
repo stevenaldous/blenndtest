@@ -1,0 +1,46 @@
+.component {
+	position: relative;
+	padding: rem( 24 ) 0;
+	@include media-breakpoint-up(md) {
+		padding: rem( 48 ) 0;
+	}
+
+	&[class*='--background-white'] {
+		background-color: var( --white );
+		color: var( --black );
+	}
+
+	&[class*='--background-light'] {
+		background-color: var( --light );
+		color: var( --dark );
+	}
+
+	&[class*='--background-dark'] {
+		background-color: var( --dark );
+		color: var( --light );
+	}
+
+	&[class*='--background-black'] {
+		background-color: var( --black );
+		color: var( --white );
+	}
+
+	[class*='__header'] {
+		&:empty {
+			display: none;
+		}
+	}
+
+	[class*='__subheader'] {
+		display: inline-block;
+		font-size: $h6-font-size;
+		font-weight: $font-weight-semibold;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		margin-bottom: $spacer;
+
+		&:empty {
+			display: none;
+		}
+	}
+}
