@@ -196,3 +196,11 @@
 		transform: translateY( 12px );
 	}
 }
+
+///// Blennd Test
+.btn-wrap .btn {
+	margin: 10px;
+	@media( max-width: $d_md - 1 ) {
+		width: 100%;
+	}
+}

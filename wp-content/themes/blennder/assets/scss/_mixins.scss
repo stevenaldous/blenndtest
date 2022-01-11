@@ -11,6 +11,15 @@
 	// stylelint-enable
 }
 
+@mixin border-radius( $rad ) {
+	// stylelint-disable
+	-webkit-border-radius: $rad;
+	-moz-border-radius: $rad;
+	-ms-border-radius: $rad;
+	border-radius: $rad;
+	// stylelint-enable
+}
+
 @mixin createNumbered($num, $className) {
 	$foo : '';
 	@for $i from $num through 1 {
@@ -21,3 +30,4 @@
 		@content;
 	}
 }
+

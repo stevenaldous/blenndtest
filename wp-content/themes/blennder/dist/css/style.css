@@ -6144,20 +6144,20 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 4.0625rem;
+  font-size: 5rem;
 }
 @media (max-width: 1200px) {
   h1, .h1 {
-    font-size: calc(1.53125rem + 3.375vw);
+    font-size: calc(1.625rem + 4.5vw);
   }
 }
 
 h2, .h2 {
-  font-size: 2.8125rem;
+  font-size: 3.125rem;
 }
 @media (max-width: 1200px) {
   h2, .h2 {
-    font-size: calc(1.40625rem + 1.875vw);
+    font-size: calc(1.4375rem + 2.25vw);
   }
 }
 
@@ -36482,23 +36482,42 @@ img {
  ******************/
 h1,
 .h1 {
-  font-family: "Spartan";
+  font-family: "Spartan", "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
   font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.8125;
+}
+@media (min-width: 768px) {
+  h1,
+.h1 {
+    font-size: 5rem;
+    line-height: 5.25rem;
+  }
 }
 .editor-styles-wrapper h1,
 .editor-styles-wrapper .h1 {
-  font-size: 65px;
-  font-size: 20px !important;
+  font-size: 80px;
 }
 
 h2,
 .h2 {
-  font-family: "Spartan";
+  font-family: "Spartan", "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
   font-weight: 400;
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+}
+@media (min-width: 768px) {
+  h2,
+.h2 {
+    font-size: 3.125rem;
+    line-height: 3.8125rem;
+  }
 }
 .editor-styles-wrapper h2,
 .editor-styles-wrapper .h2 {
-  font-size: 45px;
+  font-size: 50px;
 }
 
 .editor-styles-wrapper h3,
@@ -37243,6 +37262,21 @@ a.anchor {
   border-width: 2px;
 }
 
+.btn, input[type=submit],
+input[type=reset],
+input[type=button],
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 21px 44px;
+  font-family: "Spartan", "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 0;
+  border-radius: 50px;
+}
 .btn.btn-white, input.btn-white[type=submit],
 input.btn-white[type=reset],
 input.btn-white[type=button],
@@ -38815,6 +38849,21 @@ button.btn-tertiary {
     transform: translateY(12px);
   }
 }
+.btn-wrap .btn, .btn-wrap input[type=submit],
+.btn-wrap input[type=reset],
+.btn-wrap input[type=button],
+.btn-wrap button {
+  margin: 10px;
+}
+@media (max-width: 767px) {
+  .btn-wrap .btn, .btn-wrap input[type=submit],
+.btn-wrap input[type=reset],
+.btn-wrap input[type=button],
+.btn-wrap button {
+    width: 100%;
+  }
+}
+
 /************
  *
  * Image Gallery Styles

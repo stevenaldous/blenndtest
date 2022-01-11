@@ -14,21 +14,26 @@ h1,
 .h1 {
 	@include f1_reg();
 	font-size: 2.5rem;
-
-	.editor-styles-wrapper & {
-		// font-size: 2.5rem;
-		font-size: $h1-font-size;
-
+	line-height: 2.8125;
+	@media( min-width: $d_md ) {
+		font-size: 5rem;
+		line-height: 5.25rem;
 	}
 
-	@media( $d_md ) {
-		font-size: 5rem;
+	.editor-styles-wrapper & {
+		font-size: $h1-font-size;
 	}
 }
 
 h2,
 .h2 {
 	@include f1_reg();
+	font-size: 1.875rem;
+	line-height: 2.375rem;
+	@media( min-width: $d_md ) {
+		font-size: 3.125rem;
+		line-height: 3.8125rem;
+	}
 
 	.editor-styles-wrapper & {
 		font-size: $h2-font-size;

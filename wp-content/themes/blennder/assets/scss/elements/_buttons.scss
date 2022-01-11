@@ -9,6 +9,18 @@
 }
 
 .btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 21px 44px;
+
+	@include f1_bold();
+	font-size: 1.25rem;
+	line-height: 0;
+
+	@include border-radius( 50px );
+
 	&.btn-white {
 		color: var( --black );
 	}

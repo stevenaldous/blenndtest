@@ -54,12 +54,13 @@ $d_xxl: 1500px;
 ///////////////////////////////////////////////////////////////////////////////////
 // FONTS //////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
-$f1: 'Spartan, ' + $font-family-sans-serif;
+$f1: 'Spartan', 'Open Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 $font-weight-bolder: 800;
 
 
 @mixin f1_reg() {
 	font-family: $f1;
+	font-style: normal;
 	font-weight: 400;
 }
 @mixin f1_bold() {
