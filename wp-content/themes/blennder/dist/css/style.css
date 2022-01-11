@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap);body.compensate-for-scrollbar {
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap);@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@400;800&display=swap);body.compensate-for-scrollbar {
     overflow: hidden;
 }
 
@@ -997,7 +997,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: 900;
+  font-weight: 800;
 }
 
 small {
@@ -5909,7 +5909,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: 900;
+  font-weight: 800;
 }
 
 small {
@@ -16692,7 +16692,7 @@ button.bg-white:focus {
 }
 
 .font-weight-bolder {
-  font-weight: 900 !important;
+  font-weight: 800 !important;
 }
 
 .font-italic {
@@ -36482,13 +36482,20 @@ img {
  ******************/
 h1,
 .h1 {
-  font-weight: 900;
+  font-family: "Spartan";
+  font-weight: 400;
 }
 .editor-styles-wrapper h1,
 .editor-styles-wrapper .h1 {
   font-size: 65px;
+  font-size: 20px !important;
 }
 
+h2,
+.h2 {
+  font-family: "Spartan";
+  font-weight: 400;
+}
 .editor-styles-wrapper h2,
 .editor-styles-wrapper .h2 {
   font-size: 45px;
@@ -38437,7 +38444,7 @@ button.btn-tertiary {
 }
 .counters__prefix, .counters__number, .counters__suffix {
   font-size: 3.75rem;
-  font-weight: 900;
+  font-weight: 800;
 }
 @media (max-width: 1200px) {
   .counters__prefix, .counters__number, .counters__suffix {

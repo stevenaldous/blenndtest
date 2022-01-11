@@ -6,12 +6,18 @@ return array(
 	'description' => 'Hero Description',
 	'icon' => 'superhero-alt',
 	'keywords' => [ 'hero' ],
+
+
+
+
 	'fields' => array(
+
+
 		array(
-			'key' => 'field_53c4m39x0385az',
-			'label' => 'Button',
-			'name' => 'hero_button',
-			'type' => 'link',
+			'key' => 'field_61dcbdf3f3ba7',
+			'label' => 'Hero Buttons',
+			'name' => 'hero_button_rep',
+			'type' => 'repeater',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -20,8 +26,55 @@ return array(
 				'class' => '',
 				'id' => '',
 			),
-			'return_format' => 'array',
+			'capability' => '',
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 3,
+			'layout' => 'block',
+			'button_label' => '',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_61dcbe13f3ba8',
+					'label' => 'Button',
+					'name' => 'hero_button',
+					'type' => 'link',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'capability' => '',
+					'return_format' => 'array',
+				),
+			),
 		),
+	
+
+
+		// array(
+		// 	'key' => 'field_53c4m39x0385az',
+		// 	'label' => 'Button',
+		// 	'name' => 'hero_button',
+		// 	'type' => 'link',
+		// 	'instructions' => '',
+		// 	'required' => 0,
+		// 	'conditional_logic' => 0,
+		// 	'wrapper' => array(
+		// 		'width' => '',
+		// 		'class' => '',
+		// 		'id' => '',
+		// 	),
+		// 	'return_format' => 'array',
+		// ),
+
+
+
+
+
+
 	),
 	'design_tab' => array(
 		array(

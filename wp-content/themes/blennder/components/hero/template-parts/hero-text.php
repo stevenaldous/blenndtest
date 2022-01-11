@@ -3,13 +3,30 @@
 		<div <?php component_row(); ?>>
 			<div class="col-md-11 col-lg-10 col-xl-8">
 
-				<?php component_sub_header(); ?>
-
 				<?php component_header(); ?>
+
+				<?php component_sub_header(); ?>
 
 				<?php component_text(); ?>
 
-				<?php acf_link( 'hero_button', [ 'class' => [ 'btn btn-outline-light' ] ] ); ?>
+				<?php 
+					// check for buttons and display if selected. Max is set to 3.
+					if( have_rows('hero_button_rep') ) : 
+
+				?>
+					<div class="btn-wrap d-flex justify-content-center flex-column flex-md-row align-items-center">
+					<?php 
+						// loop through button repeater
+						foreach( $fields['hero_button_rep'] as $btn ):
+			
+							acf_link( 'hero_button', [ 'class' => [ 'btn btn-primary' ] ] , $btn ); 
+
+						endforeach;
+					?>
+
+					</div>
+					<?php endif;	
+				?>
 
 				<?php if ( has_field( 'hero_arrow' ) && true === $fields['hero_arrow'] ) : ?>
 					<a href="#hero-bottom" class="hero__scroll">

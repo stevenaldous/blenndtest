@@ -12,15 +12,24 @@ html {
 // Responsive Heading Typography
 h1,
 .h1 {
-	font-weight: $font-weight-bolder;
+	@include f1_reg();
+	font-size: 2.5rem;
 
 	.editor-styles-wrapper & {
+		// font-size: 2.5rem;
 		font-size: $h1-font-size;
+
+	}
+
+	@media( $d_md ) {
+		font-size: 5rem;
 	}
 }
 
 h2,
 .h2 {
+	@include f1_reg();
+
 	.editor-styles-wrapper & {
 		font-size: $h2-font-size;
 	}
