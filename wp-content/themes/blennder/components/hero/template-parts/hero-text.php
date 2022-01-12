@@ -9,40 +9,7 @@
 
 				<?php component_text(); ?>
 
-
-
-
-
-				<?php //////// video player     
-
-				/*
-					
-				?>
-				<?php if(  have_rows('video_player_sources') ): ?>
-
-					<div class="col-12 video-player">
-
-						<div class="video-player__video">
-
-							<video>
-								<?php if( $src = get_has_field( 'background_video_desktop_mp4', false ) ) : ?>
-								<source src="<?php echo $src[ 'url' ]; ?>" type="video/mp4" >
-								<?php endif; ?>
-								<?php if( $src = get_has_field( 'background_video_desktop_webm', false ) ) : ?>
-								<source src="<?php echo $src[ 'url' ]; ?>" type="video/webm" >
-								<?php endif; ?>
-								<?php acf_image( 'background_video_poster' ); ?>
-								Your browser does not support the video tag.
-							</video>
-
-						</div>
-
-					</div>
-					
-				<?php endif; 
-	
-					*/
-				?>
+				<?php include component_part_path( 'hero-text-vidpart' ); ?>
 
 
 				<?php 

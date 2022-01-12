@@ -38757,6 +38757,13 @@ button.btn-tertiary {
  * Forms Styles
  *
  ***********/
+.hero {
+  /************
+   *
+   * Video Player Styles
+   *
+   ***********/
+}
 @media (max-width: 767.98px) {
   .hero {
     background-attachment: scroll !important;
@@ -38788,7 +38795,6 @@ button.btn-tertiary {
   .hero--auto .hero__video:after {
     content: "";
     display: block;
-    padding-bottom: 56.25%;
   }
 }
 @media (min-width: 1020px) {
@@ -38813,18 +38819,6 @@ button.btn-tertiary {
   .hero--md .jumbotron,
 .hero--md .hero__video {
     height: 575px;
-  }
-}
-@media (min-width: 768px) {
-  .hero--lg .jumbotron,
-.hero--lg .hero__video {
-    height: 600px;
-  }
-}
-@media (min-width: 1020px) {
-  .hero--lg .jumbotron,
-.hero--lg .hero__video {
-    height: 700px;
   }
 }
 @media (min-width: 1020px) {
@@ -38959,6 +38953,16 @@ button.btn-tertiary {
 .hero .btn-wrap button {
     width: 100%;
   }
+}
+.hero .hero-video-player__video-media {
+  position: relative;
+  overflow: hidden;
+}
+.hero .hero-video-player__content {
+  margin-top: 1.5rem;
+}
+.hero .hero-video-player--single .hero .hero-video-player__content, .hero .hero-video-player--centered .hero .hero-video-player__content {
+  text-align: center;
 }
 
 @-webkit-keyframes action {

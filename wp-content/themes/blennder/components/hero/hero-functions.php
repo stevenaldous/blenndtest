@@ -44,7 +44,7 @@ function hero_video_attr() {
 function hero_video_player_video_attr($video) {
 
 	$attr = [
-		'class'       => 'video-player__video-media',
+		'class'       => 'hero-video-player__video-media',
 		'playsinline' => true,
 		'controls'    => true,
 		'preload'     => 'auto',
@@ -54,5 +54,7 @@ function hero_video_player_video_attr($video) {
 
 	html_atts( $attr );
 }
+
+
 ?>
 

@@ -90,8 +90,29 @@ import jQuery from 'jquery';
 		});
 	};
 
+		$.fn.heroVideoPlayerComponent = function() {
+		return this.each(function() {
+			let $this = $(this);
+
+			if( $this.length > 0 ){
+
+				new MediaElementPlayer($this[0], {  // eslint-disable-line no-undef
+					clickToPlayPause :true,
+					autoRewind : false,
+					stretching : "responsive",
+
+					success: function(mediaElement, originalNode, instance) { // eslint-disable-line no-unused-vars
+						// Player Loading Success
+					}
+				});
+			}
+		});
+	};
+
 	$(document).ready(function(){
 		$('.hero').heroComponent();
+
+		$('.video-player__video-media').heroVideoPlayerComponent();
 	});
 
 
