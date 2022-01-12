@@ -40,3 +40,19 @@ function hero_video_attr() {
 	];
 	html_atts( $attr );
 }
+
+function hero_video_player_video_attr($video) {
+
+	$attr = [
+		'class'       => 'video-player__video-media',
+		'playsinline' => true,
+		'controls'    => true,
+		'preload'     => 'auto',
+		'width'       => '100%',
+		'poster'      => wp_get_attachment_image_url($video['video_player_poster']['id'] ?? null, 'video') ?? false,
+	];
+
+	html_atts( $attr );
+}
+?>
+

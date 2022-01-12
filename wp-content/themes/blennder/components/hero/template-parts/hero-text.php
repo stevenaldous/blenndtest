@@ -9,6 +9,34 @@
 
 				<?php component_text(); ?>
 
+
+
+
+
+				<?php //////// video player     
+
+					/*
+				?>
+				<?php if(  have_rows('video_player_items') ): ?>
+
+					<div class="col-12 video-player">
+
+						<div class="video-player__video">
+
+							<?php $video = $fields[ 'video_player_items' ][0]; ?>
+
+							<?php include( get_stylesheet_directory() . '/components/video-player/template-parts/video-player-video.php'); ?>
+
+						</div>
+
+					</div>
+					
+				<?php endif; 
+	
+					*/
+				?>
+
+
 				<?php 
 					// check for buttons and display if selected. Max is set to 3.
 					if( have_rows('hero_button_rep') ) : 

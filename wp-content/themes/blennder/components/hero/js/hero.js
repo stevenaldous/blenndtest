@@ -90,9 +90,35 @@ import jQuery from 'jquery';
 		});
 	};
 
+	// blennd test add video player component
+	$.fn.videoPlayerComponent = function() {
+		return this.each(function() {
+			let $this = $(this);
+
+			if( $this.length > 0 ){
+
+				new MediaElementPlayer($this[0], {  // eslint-disable-line no-undef
+					clickToPlayPause :true,
+					autoRewind : false,
+					stretching : "responsive",
+
+					success: function(mediaElement, originalNode, instance) { // eslint-disable-line no-unused-vars
+						// Player Loading Success
+					}
+				});
+			}
+		});
+	};
+
 	$(document).ready(function(){
 		$('.hero').heroComponent();
+
+		// blennd test add video player component
+		$('.video-player__video-media').videoPlayerComponent();
 	});
+
+
+
 
 
 })(jQuery);

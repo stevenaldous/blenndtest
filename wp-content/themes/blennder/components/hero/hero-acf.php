@@ -11,8 +11,106 @@ return array(
 
 
 	'fields' => array(
+		// Blennd Test - Video Player
+		array(
+			'key' => 'field_3rghjiuy6tr',
+			'label' => 'Video Player',
+			'name' => 'video_player_items',
+			'type' => 'repeater',
+			'instructions' => 'Add Videos',
+			'layout' => 'block',
+			'button_label' => 'Add Video',
+			'max' => 1,
+			'sub_fields' => array(
+				array(
+					'key' => 'field_983m4983bv5in9',
+					'label' => 'Video Title',
+					'name' => 'video_player_title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_gbniu38nt0u522',
+					'label' => 'Video Description',
+					'name' => 'video_player_description',
+					'type' => 'textarea',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => '3',
+					'new_lines' => 'br',
+				),
+				array(
+					'key' => 'field_539483n4374nbb9',
+					'label' => 'Poster',
+					'name' => 'video_player_poster',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'preview_size' => 'medium',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '.jpg, .png',
+				),
+				array(
+					'key' => 'field_3o34um03948m0394',
+					'label' => 'Video Player Sources',
+					'name' => 'video_player_sources',
+					'type' => 'repeater',
+					'instructions' => 'Video items will be attempted to play in the order provided. Only the first video that the browser is capable of playing will actually play.',
+					'layout' => 'block',
+					'button_label' => 'Add Video Source',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_239487n30m34jd83',
+							'label' => 'Video Source',
+							'name' => 'video',
+							'type' => 'file',
+							'required' => 1,
+							'return_format' => 'array',
+							'library' => 'all',
+							'mime_types' => '.mp4, .webm',
+						),
+					),
+				),
+			),
+		),
 
+		// Blennd Test - Video Player
 
+		// Blennd Test - Hero Btn Repeater
 		array(
 			'key' => 'field_61dcbdf3f3ba7',
 			'label' => 'Hero Buttons',
@@ -31,7 +129,7 @@ return array(
 			'min' => 0,
 			'max' => 3,
 			'layout' => 'block',
-			'button_label' => '',
+			'button_label' => 'Add Button',
 			'sub_fields' => array(
 				array(
 					'key' => 'field_61dcbe13f3ba8',
@@ -51,30 +149,7 @@ return array(
 				),
 			),
 		),
-	
-
-
-		// array(
-		// 	'key' => 'field_53c4m39x0385az',
-		// 	'label' => 'Button',
-		// 	'name' => 'hero_button',
-		// 	'type' => 'link',
-		// 	'instructions' => '',
-		// 	'required' => 0,
-		// 	'conditional_logic' => 0,
-		// 	'wrapper' => array(
-		// 		'width' => '',
-		// 		'class' => '',
-		// 		'id' => '',
-		// 	),
-		// 	'return_format' => 'array',
-		// ),
-
-
-
-
-
-
+		// Blennd Test - Hero Btn Repeater
 	),
 	'design_tab' => array(
 		array(
