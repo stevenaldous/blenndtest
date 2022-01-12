@@ -18,7 +18,7 @@
 						<span class="d-block"></span>
 					</div>
 
-					<?php acf_link( 'cta_button', [ 'class' => [ 'btn btn-secondary testclass mt-3 mt-md-0' ] ] ); ?>
+					<?php acf_link( 'cta_button', [ 'class' => [ 'btn btn-secondary testclass mt-5 mt-md-0' ] ] ); ?>
 
 				</div>
 			</div>

@@ -3,9 +3,9 @@
 	$video = $fields[ 'video_player_items' ][0];
 ?>
 
-	<div class="col-12 hero-video-player">
+	<div class="col-12 hero-video-player order-md-1 mt-md-5">
 
-		<div class="hero-video-player__video">
+		<div class="hero-video-player__video mt-4">
 
 			<?php  ?>
 			<video <?php hero_video_player_video_attr($video); ?>>

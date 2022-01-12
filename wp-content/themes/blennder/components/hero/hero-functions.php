@@ -44,7 +44,7 @@ function hero_video_attr() {
 function hero_video_player_video_attr($video) {
 
 	$attr = [
-		'class'       => 'hero-video-player__video-media',
+		'class'       => 'hero-video-player__video-media bt-box-shadow bt-corner',
 		'playsinline' => true,
 		'controls'    => true,
 		'preload'     => 'auto',
