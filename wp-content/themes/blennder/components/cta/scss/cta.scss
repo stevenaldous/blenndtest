@@ -181,7 +181,6 @@
 	}
 
 	/// Blennd Test Styles
-
 	.tl-wrap {
 		span {
 			height: 4px;
@@ -211,8 +210,11 @@
 		}
 	}
 
-
-	&.cta-image {
+	&.cta--image .overlay {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		width: 100%;
 		background: $bg-fill;
 	}
 	/// Blennd Test Styles end

@@ -1,3 +1,5 @@
+<?php // ?>
+<div class="overlay"></div>
 <div class="jumbotron px-0">
 	<div <?php component_container(); ?>>
 		<div <?php component_row(); ?>>

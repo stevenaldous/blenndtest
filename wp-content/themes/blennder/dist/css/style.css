@@ -38744,7 +38744,11 @@ button.btn-tertiary {
 .cta.cta--background-light .btn-text {
   color: #2d0288;
 }
-.cta.cta-image {
+.cta.cta--image .overlay {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
   background: linear-gradient(93.7deg, rgba(55, 0, 171, 0.7) 29.22%, rgba(55, 0, 171, 0) 137.59%);
 }
 
