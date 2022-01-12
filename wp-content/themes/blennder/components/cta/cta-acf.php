@@ -13,7 +13,22 @@ return array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+		),
+		array(
+			'key' => 'field_d3b8j0ah5z6rfj',
+			'label' => 'Text Link',
+			'name' => 'cta_link',
+			'type' => 'link',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),

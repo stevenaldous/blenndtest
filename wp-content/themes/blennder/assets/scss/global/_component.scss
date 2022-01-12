@@ -11,12 +11,12 @@
 	}
 
 	&[class*='--background-light'] {
-		background-color: var( --light );
+		background: $lt-bg-grad;
 		color: var( --dark );
 	}
 
 	&[class*='--background-dark'] {
-		background-color: var( --dark );
+		background: $dk-bg-grad;
 		color: var( --light );
 	}
 

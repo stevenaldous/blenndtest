@@ -9,7 +9,15 @@
 
 				<?php component_text(); ?>
 
-				<?php acf_link( 'cta_button', [ 'class' => [ 'btn btn-outline-light' ] ] ); ?>
+				<div class="btn-wrap d-flex flex-column justify-content-center align-items-center">
+
+					<?php acf_link( 'cta_link', [ 'class' => [ 'btn btn-text mt-md-3 order-md-1' ] ] ); ?>
+
+					<?php acf_link( 'cta_button', [ 'class' => [ 'btn btn-secondary testclass mt-md-3' ] ] ); ?>
+
+					
+
+				</div>
 			</div>
 		</div>
 	</div>

@@ -11,12 +11,30 @@
 	// stylelint-enable
 }
 
-@mixin border-radius( $rad ) {
+@mixin transition( $p  ) {
 	// stylelint-disable
-	-webkit-border-radius: $rad;
-	-moz-border-radius: $rad;
-	-ms-border-radius: $rad;
-	border-radius: $rad;
+	-webkit-transition: $p;
+	-o-transition: $p;
+	-moz-transition: $p;
+	transition: $p;
+	// stylelint-enable
+}
+
+@mixin border-radius( $r ) {
+	// stylelint-disable
+	-webkit-border-radius: $r;
+	-moz-border-radius: $r;
+	-ms-border-radius: $r;
+	border-radius: $r;
+	// stylelint-enable
+}
+
+@mixin transform( $t ) {
+	// stylelint-disable
+	-moz-transform: $t;
+	-o-transform: $t;
+	-webkit-transform: $t;
+	transform: $t;
 	// stylelint-enable
 }
 

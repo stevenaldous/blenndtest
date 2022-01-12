@@ -17,7 +17,7 @@
 
 	@include f1_bold();
 	font-size: 1.25rem;
-	line-height: 0;
+	line-height: 1.375rem;
 
 	@include border-radius( 50px );
 
@@ -38,11 +38,29 @@
 	}
 
 	&.btn-primary {
-		background-color: var( --primary );
+		color: $white;
+		border: none;
+		background-color: $purple;
+		background-size: 200% auto;
+		background-image: $dk-grad2;
+		@include transition( $animate );
+
+		&:hover {
+			background-position: right center;
+		}
 	}
 
 	&.btn-secondary {
-		background-color: var( --secondary );
+		color: $white;
+		border: none;
+		background-color: $yellow;
+		background-size: 200% auto;
+		background-image: $lt-grad2;
+		@include transition( $animate );
+
+		&:hover {
+			background-position: right center;
+		}
 	}
 
 	&.btn-tertiary {
@@ -60,20 +78,28 @@
 }
 
 .btn-text {
-	padding: 0;
-	font-weight: $font-weight-normal;
+	color: $white;
+	@include border-radius( 0 );
+	border-bottom: 2px solid $orange;
+	margin: 0;
+	padding: 21px 0;
 
 	&::after {
-		content: fa-content( $fa-var-chevron-right );
+		content: fa-content( $fa-var-arrow-right );
 		font-family: $font-fa;
 		font-size: $font-size-sm;
 		transition: margin 0.15s ease-in-out;
-		margin-left: rem( 5 );
+		margin-left: rem( 7 );
+
+		@include transition( all $animate );
+		@include transform( rotate( -45deg ) );
 	}
 
 	&:hover {
+		color: $white;
+
 		&::after {
-			margin-left: rem( 7 );
+			@include transform( rotate( 0deg ) );
 		}
 	}
 }

@@ -35311,11 +35311,11 @@ readers do not read off random characters that represent icons */
   color: var(--black);
 }
 .component[class*="--background-light"] {
-  background-color: var(--light);
+  background: radial-gradient(85% 268.64% at 21.82% 28.52%, #dcf8fe 0%, #fef0dc 51.56%, #e8f3f9 94.79%, rgba(241, 220, 254, 0.484374) 100%, rgba(4, 2, 4, 0) 100%);
   color: var(--dark);
 }
 .component[class*="--background-dark"] {
-  background-color: var(--dark);
+  background: linear-gradient(101.13deg, #3700ab -1.9%, #170342 79.55%);
   color: var(--light);
 }
 .component[class*="--background-black"] {
@@ -36487,6 +36487,12 @@ h1,
   font-weight: 400;
   font-size: 2.5rem;
   line-height: 2.8125;
+  background: linear-gradient(90.12deg, #3700ab 18.95%, #170342 90.03%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2em;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   h1,
@@ -36507,6 +36513,12 @@ h2,
   font-weight: 400;
   font-size: 1.875rem;
   line-height: 2.375rem;
+  background: linear-gradient(90.12deg, #3700ab 18.95%, #170342 90.03%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2em;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   h2,
@@ -37274,7 +37286,7 @@ button {
   font-family: "Spartan", "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 800;
   font-size: 1.25rem;
-  line-height: 0;
+  line-height: 1.375rem;
   border-radius: 50px;
 }
 .btn.btn-white, input.btn-white[type=submit],
@@ -37305,13 +37317,51 @@ button.btn-black {
 input[type=reset],
 input[type=button],
 button {
-  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  background-color: #6f42c1;
+  background-size: 200% auto;
+  background-image: linear-gradient(93.97deg, #3700ab -13.06%, #170342 162.57%);
+  transition: ease-in-out 0.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn.btn-primary, input[type=submit],
+input[type=reset],
+input[type=button],
+button {
+    transition: none;
+  }
+}
+.btn.btn-primary:hover, input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+button:hover {
+  background-position: right center;
 }
 .btn.btn-secondary, input.btn-secondary[type=submit],
 input.btn-secondary[type=reset],
 input.btn-secondary[type=button],
 button.btn-secondary {
-  background-color: var(--secondary);
+  color: #ffffff;
+  border: none;
+  background-color: #ffb92b;
+  background-size: 200% auto;
+  background-image: linear-gradient(259.64deg, #f16a3f 13.94%, #feb805 159.27%);
+  transition: ease-in-out 0.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn.btn-secondary, input.btn-secondary[type=submit],
+input.btn-secondary[type=reset],
+input.btn-secondary[type=button],
+button.btn-secondary {
+    transition: none;
+  }
+}
+.btn.btn-secondary:hover, input.btn-secondary[type=submit]:hover,
+input.btn-secondary[type=reset]:hover,
+input.btn-secondary[type=button]:hover,
+button.btn-secondary:hover {
+  background-position: right center;
 }
 .btn.btn-tertiary, input.btn-tertiary[type=submit],
 input.btn-tertiary[type=reset],
@@ -37329,18 +37379,31 @@ button.btn-tertiary {
 }
 
 .btn-text {
-  padding: 0;
-  font-weight: 400;
+  color: #ffffff;
+  border-radius: 0;
+  border-bottom: 2px solid #fd7e14;
+  margin: 0;
+  padding: 21px 0;
 }
 .btn-text::after {
-  content: "\F054";
+  content: "\F061";
   font-family: "Font Awesome 6 Pro";
   font-size: 0.875rem;
   transition: margin 0.15s ease-in-out;
-  margin-left: 0.3125rem;
+  margin-left: 0.4375rem;
+  transition: all ease-in-out 0.25s;
+  transform: rotate(-45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-text::after {
+    transition: none;
+  }
+}
+.btn-text:hover {
+  color: #ffffff;
 }
 .btn-text:hover::after {
-  margin-left: 0.4375rem;
+  transform: rotate(0deg);
 }
 
 @media (min-width: 768px) {
@@ -38660,6 +38723,18 @@ button.btn-tertiary {
   box-shadow: 0 0 0 0.2rem rgba(4, 123, 255, 0.25);
 }
 
+.cta--background-dark h1,
+.cta--background-dark .h1,
+.cta--background-dark h2,
+.cta--background-dark .h2 {
+  background: radial-gradient(85% 268.64% at 21.82% 28.52%, #dcf8fe 0%, #fef0dc 51.56%, #e8f3f9 94.79%, rgba(241, 220, 254, 0.484374) 100%, rgba(4, 2, 4, 0) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2em;
+  margin-bottom: 10px;
+}
+
 /************
  *
  * Forms Styles
@@ -38687,6 +38762,29 @@ button.btn-tertiary {
   height: 100%;
   position: relative;
   z-index: 1;
+}
+.hero .jumbotron .hero__subheader {
+  text-transform: lowercase;
+  background: linear-gradient(90.12deg, #3700ab 18.95%, #170342 90.03%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2em;
+  margin-bottom: 10px;
+  font-family: "Spartan", "Open Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 107.1%;
+  padding-top: 0.2rem;
+  margin-top: -0.2rem;
+}
+@media (min-width: 768px) {
+  .hero .jumbotron .hero__subheader {
+    font-size: 5.5rem;
+    line-height: 107.1%;
+    padding-top: 0.4rem;
+    margin-top: -0.4rem;
+  }
 }
 .hero--image {
   background-size: cover;

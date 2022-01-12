@@ -94,3 +94,24 @@ $tan:		#fc55eb;
 //White
 $white:		#ffffff;
 
+
+// dark gradients (2nd for btn)
+$dk-grad:  linear-gradient( 90.12deg, $purple 18.95%, $dk-purple 90.03% );
+$dk-grad2:	linear-gradient( 93.97deg, $purple -13.06%, $dk-purple 162.57% );
+
+// light gradients (2nd for btn)
+$lt-grad:  linear-gradient( 90.12deg, $purple 18.95%, $dk-purple 90.03% );
+$lt-grad2:	linear-gradient( 259.64deg, #f16a3f 13.94%, $yellow 159.27% );
+
+// background gradients
+$dk-bg-grad: linear-gradient( 101.13deg, $purple -1.9%, $dk-purple 79.55% );
+$lt-bg-grad: radial-gradient( 85% 268.64% at 21.82% 28.52%, #dcf8fe 0%, #fef0dc 51.56%, #e8f3f9 94.79%, rgba( 241, 220, 254, 0.484374 ) 100%, rgba( 4, 2, 4, 0 ) 100% );
+$bg-fill: linear-gradient( 93.7deg, rgba( 55, 0, 171, 0.7 ) 29.22%, rgba( 55, 0, 171, 0 ) 137.59% );
+
+@mixin grad-text() {
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-bottom: 0.2em;
+	margin-bottom: 10px;
+}
+

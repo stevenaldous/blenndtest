@@ -19,6 +19,23 @@
 			position: relative;
 			z-index: 1;
 		}
+
+		.hero__subheader {
+			text-transform: lowercase;
+			background: $dk-grad;
+			@include grad-text();
+			@include f1_bold();
+			font-size: 2.5rem;
+			line-height: 107.1%;
+			padding-top: 0.2rem;
+			margin-top: -0.2rem;
+			@media( min-width: $d_md ) {
+				font-size: 5.5rem;
+				line-height: 107.1%;
+				padding-top: 0.4rem;
+				margin-top: -0.4rem;
+			}
+		}
 	}
 
 	&--image {
