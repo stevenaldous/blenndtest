@@ -14,7 +14,7 @@ h1,
 .h1 {
 	@include f1_reg();
 	font-size: 2.5rem;
-	line-height: 2.8125;
+	line-height: 2.8125rem;
 	background: $dk-grad;
 	@include grad-text();
 

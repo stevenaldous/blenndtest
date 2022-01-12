@@ -179,16 +179,42 @@
 			box-shadow: $btn-focus-box-shadow;
 		}
 	}
-}
 
+	/// Blennd Test Styles
 
-/// Blennd Test Styles
-.cta--background-dark {
-	h1,
-	.h1,
-	h2,
-	.h2 {
-		background: $lt-bg-grad;
-		@include grad-text();
+	.tl-wrap {
+		span {
+			height: 4px;
+			width: 100%;
+			background-color: $orange;
+			@include border-radius( 20px );
+
+		}
 	}
+
+
+	&.cta--background-dark,
+	&.cta--image {
+		h1,
+		.h1,
+		h2,
+		.h2 {
+			background: $lt-bg-grad;
+			@include grad-text();
+		}
+	}
+
+	&.cta--background-light {
+		.btn-text {
+			color: #2d0288;
+
+		}
+	}
+
+
+	&.cta-image {
+		background: $bg-fill;
+	}
+	/// Blennd Test Styles end
 }
+

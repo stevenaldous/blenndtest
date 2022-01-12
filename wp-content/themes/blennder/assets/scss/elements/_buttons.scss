@@ -80,14 +80,13 @@
 .btn-text {
 	color: $white;
 	@include border-radius( 0 );
-	border-bottom: 2px solid $orange;
 	margin: 0;
-	padding: 21px 0;
+	padding: 21px 0 11px;
 
 	&::after {
 		content: fa-content( $fa-var-arrow-right );
 		font-family: $font-fa;
-		font-size: $font-size-sm;
+		font-size: 1em;
 		transition: margin 0.15s ease-in-out;
 		margin-left: rem( 7 );
 

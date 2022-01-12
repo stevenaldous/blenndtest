@@ -1,7 +1,7 @@
 <div class="jumbotron px-0">
 	<div <?php component_container(); ?>>
 		<div <?php component_row(); ?>>
-			<div class="col-md-11 col-lg-10 col-xl-8">
+			<div class="col-lg-11 col-xl-10">
 
 				<?php component_header(); ?>
 
@@ -14,7 +14,7 @@
 					if( have_rows('hero_button_rep') ) : 
 
 				?>
-					<div class="btn-wrap d-flex justify-content-center flex-column flex-md-row align-items-center">
+					<div class="btn-wrap d-flex justify-content-center flex-column flex-md-row align-items-center mt-4">
 					<?php 
 						// loop through button repeater
 						foreach( $fields['hero_button_rep'] as $btn ):

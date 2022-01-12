@@ -9,13 +9,14 @@
 
 				<?php component_text(); ?>
 
-				<div class="btn-wrap d-flex flex-column justify-content-center align-items-center">
+				<div class="btn-wrap d-flex flex-column justify-content-center align-items-center mt-4">
 
-					<?php acf_link( 'cta_link', [ 'class' => [ 'btn btn-text mt-md-3 order-md-1' ] ] ); ?>
+					<div class="tl-wrap mt-md-3 order-md-1">
+						<?php acf_link( 'cta_link', [ 'class' => [ 'btn btn-text' ] ] ); ?>
+						<span class="d-block"></span>
+					</div>
 
-					<?php acf_link( 'cta_button', [ 'class' => [ 'btn btn-secondary testclass mt-md-3' ] ] ); ?>
-
-					
+					<?php acf_link( 'cta_button', [ 'class' => [ 'btn btn-secondary testclass mt-3 mt-md-0' ] ] ); ?>
 
 				</div>
 			</div>
